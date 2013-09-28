@@ -1,0 +1,63 @@
+<include file="../Index/header" />
+<script language="javascript">
+var _curPos = 0;
+</script>
+<script type="text/javascript" src="__PUBLIC__/Js/photo.js" charset="utf-8"></script>
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" /> 
+<style>
+ .bigPhoto-left-img{cursor : url(http://127.0.0.1/thinkphp/Tpl/default/Skins/images/pre.cur),auto;}
+ .bigPhoto-right-img{cursor : url(http://127.0.0.1/thinkphp/Tpl/default/Skins/images/next.cur),auto;}
+</style>
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" /> 
+        <div class="photo_view">
+        <div class="pro_nav">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}" class="on">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}">TA的日记</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>
+        <h2 class="profile"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">{$nickname}的相册</h2>
+        <div class="photo_top mrt10"></div>
+        <div class="photo_mid"><neq name="list" value=""><img id="photoBigPic" src="{$root}/{$list['0']['pic']}" alt="" width="{$list['0']['width']}" height="{$list['0']['height']}" class=""><else/><img src="{$tpl}/Skins/images/noalbum.jpg" width="300" height="300" /></neq></div>
+        <div class="photo_bottom mrb10">
+        <div class="up">{$up}</div><div class="piclist"><table border="0" cellspacing="1" cellpadding="0" bgcolor="#cccccc">		<tbody><tr><volist name="list" id="qy"><td id="smallPhoto_{$qy.num}" valign="middle" class=""><a href="javascript:clickSmallPhoto({$qy.num})"><img src="{$root}{$qy.pic}" alt="{$qy.albumname}"></a></td></volist>
+        </tr>	</tbody></table></div>
+        <div class="down">{$down}</div>
+        </div>
+        <div class="cl"></div>
+      </div>
+      
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<script language="javascript">
+		var _photos = {
+			"totalNum":{$number},
+			"upList":[
+			<volist name="list" id="qy">
+			{
+				"defaultUrl":"{$root}{$qy.pic}",
+				"title":"{$qy.albumname}",
+				"width":"{$qy.width}",
+				"height":"{$qy.height}"
+			},
+			</volist>
+			
+			]
+		};		
+		showPhoto(_photos);
+	</script>
+<include file="../Index/footer" />

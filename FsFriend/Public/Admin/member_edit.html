@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/js/common.js"></script>
+<script language="javascript" type="text/javascript" src="http://127.0.0.1/thinkphp/Tpl/default/js/ChangeCity.js"></script> 
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="getCity({$pro},{$city})">
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="myform" action="" method="post">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+     <td class="center">
+      <p class="position"><span>网站管理</span>会员信息</p>
+      <div class="sub_nav"><ul><li><a href="__URL__/audit/uid/{$uid}">审核</a></li><li><a href="__URL__/lock/uid/{$uid}">禁止</a></li><li><a href="__URL__/delmember/uid/{$uid}">删除</a></li><li><a href="__URL__/chgroup/uid/{$uid}">更改会员组</a></li><li><a href="__URL__/edit/uid/{$uid}">编辑资料</a></li><li><a href="__ROOT__/?s=AdminMod/paylist/field/uid/keyword/{$uid}">支付记录</a></li><li><a href="__ROOT__/?s=AdminMod/paycharge/uid/{$uid}">交易明细</a></li><li><a href="__ROOT__/index.php/AdminMod/album/uid/{$uid}">他的相册</a></li><li><a href="__ROOT__/index.php/AdminMod/diary/uid/{$uid}">他的日记</a></li></ul><div class="cl"></div></div>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_list">
+      <caption>会员信息</caption>
+      <tr>
+        <td class="align_r">用户名：</td>
+        <td class="align_l"><input type="text" name="username" value="{$username}" /></td>    
+      </tr>
+      <tr>
+        <td class="align_r">Email：</td>
+        <td class="align_l"><input type="text" name="email" value="{$email}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">新密码：</td>
+        <td class="align_l"><input type="password" name="pwd" value="" /> 不修改请留空</td>
+      </tr>
+      <tr>
+        <td class="align_r">确认新密码：</td>
+        <td class="align_l"><input type="password" name="pwd2" value="" /></td>
+      </tr>
+      <volist name="forminfos" id="qy">
+      <tr>
+        <td class="align_r">{$qy.name}</td>
+        <td  class="align_l">{$qy.form}</td>
+      </tr>
+      </volist>
+      <tr>
+        <td class="align_r"></td><input type="hidden" name="uid" value="{$uid}" />
+        <td  class="align_l"><input type="submit" name="submit" value="提交修改"  /> <input type="reset" name="rest" value="重置"  /></td>
+      </tr>
+      </table>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

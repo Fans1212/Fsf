@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="myform" action="__URL__/adsupdate" method="post">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <p class="position"><span>网站管理</span>基本设置</p>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <caption>网站广告</caption>
+      <tr>
+        <th class="form_th">广告标识码</th>
+        <th class="form_th">广告内容</th>
+      </tr>
+      <volist name="listads" id="qy">
+      <tr><input name="adsid[{$qy.adsid}]" type="hidden"  value="{$qy.adsid}" maxlength="50">
+        <td class="align_r"><input name="adsname[{$qy.adsid}]"  type="text" value="{$qy.adsname}" maxlength="50"></td>
+        <td class="align_l"><textarea name="adscontent[{$qy.adsid}]" cols="80" style="height:80px">{$qy.adscontent|htmlspecialchars}</textarea></td>
+      </tr>
+      </volist>
+      <tr>
+        <td class="align_r" ><input name="ads_name_sub" type="text" maxlength="50"></td>
+        <td class="align_l" ><textarea name="ads_content_sub" cols="80" style="height:80px;"></textarea>
+      </tr>
+      <tr>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_l">            <input class="submit" type="submit" name="submit" value=" 提交 " >
+            <input type="reset" name="Input" value=" 重置 " ></td>
+      </tr>
+          </table>
+      
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

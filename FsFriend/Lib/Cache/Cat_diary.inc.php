@@ -1,0 +1,30 @@
+<?php
+return array(
+  '1'=>array(
+     'cateid'=>'1',
+     'name'=>'交友日记',
+     'parentid'=>'0',
+  ),
+  '2'=>array(
+     'cateid'=>'2',
+     'name'=>'情感故事',
+     'parentid'=>'0',
+  ),
+  '3'=>array(
+     'cateid'=>'3',
+     'name'=>'生活随笔',
+     'parentid'=>'0',
+  ),
+  '4'=>array(
+     'cateid'=>'4',
+     'name'=>'两性私语',
+     'parentid'=>'0',
+  ),
+  '5'=>array(
+     'cateid'=>'5',
+     'name'=>'其他日记',
+     'parentid'=>'0',
+  )
+)
+
+?>

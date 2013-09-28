@@ -1,0 +1,47 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>我的相片</p>
+<table  cellspacing="1" cellpadding="0" class="table_form">
+<caption>我的相片</caption>
+<form name="editpw" action="" method="post">
+  <tr>
+    <td align="center">
+    <ul id="album">
+    <neq name="list" value="">
+    <volist name="list" id="qy">
+    <li>
+    <a href="Album/view/aid/{$qy.albumid}.html" target="_blank"><img src="{$root}{$qy.pic}" width="185" height="175" /></a>
+    <p><eq name="qy.status" value="1"><font color="green">已审核</font><else/>未审核</eq>|<a href="__URL__/del/id/{$qy.albumid}">删除</a></p>
+    </li>
+    </volist>
+    <else/>
+    <img src="{$tpl}/Skins/images/album_no.gif" width="212" height="210"  />
+    </neq>
+    </ul>
+    </td>
+  </tr>
+</form>
+</table>
+<form id="upload" method='post' action="{$root}/?s=Upload/album" enctype="multipart/form-data">
+<table cellpadding=0 cellspacing=1 class="table_form">
+<caption>上传新相片</caption>
+<tr>
+	<td class="tLeft tTop">
+<div class="impBtn  fLeft" ><input name="image" id="image" type="file" class="file" /> <input type="submit" value="提交" class="button" ></div> 
+  <p id="notice">注意事项：<br />1.普通会员最多可以上传6张照片，VIP会员不限制；<br />
+2.照片的最小尺寸为50X50，最大尺寸为500X400；<br />
+3.大小不超过200K；<br />
+4.图片格式必须为jpg格式；<br />
+5.会员照片必须真实；<br />
+6.严禁上传低俗色情照片，违规者将被删除会员资格；<br />
+7.照片需经管理员审核。</p>
+</td>
+</tr>
+</table>
+</form>
+   </div>
+</div>
+<include file="../Index/footer" />

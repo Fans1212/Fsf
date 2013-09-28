@@ -1,0 +1,26 @@
+<include file="../Index/header" />
+<div id="main">
+    <include file="left" />
+    <div id="m_right" class="mrt10">
+       <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>上传头像</p>
+<form id="upload" method='post' action="{$root}?s=Upload/" enctype="multipart/form-data">
+<table  border="0" cellspacing="1" class="table_form">
+<caption>上传头像</caption>
+   <tr>
+      <td>
+      <div id="avatar">
+        <img src="<neq name="image" value="">{$image}<else/>__PUBLIC__/Uploads/avatar/nophoto{$gender}.gif</neq>" width="120" height="150" /><p>&nbsp;</p>
+        <input name="image" id="image" type="file" class="file" /> <input type="submit" value="提交" class="button" >
+        <p>注意：</p>
+        <p>1、请上传本人清晰相片作为头像，严禁露点、色情等低俗照片，违规者扣除E币！</p>
+        <p>2、支持图片格式JPG\GIF\PNG，图片大小不超过200K。</p>
+        <div class="cl"></div>
+      </div>
+      
+      </td>
+   </tr>
+</table>
+</form>
+</div>
+</div>
+<include file="../Index/footer" />

@@ -1,0 +1,70 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/css.js"></script>
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>我的收藏</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/myCollect">我的收藏</a></li><li><a href="__URL__/collectme">收藏我的人</a></li>
+       <div class="cl"></div>
+  </ul>
+<if condition="strtolower(ACTION_NAME) eq mycollect ">
+<form method="post" name="myform" action="__URL__/del">
+<table cellspacing="1" cellpadding="0" class="table_list">
+<caption>我的收藏</caption>
+  <tr>
+    <th>删除</td>
+    <th>用户名</td>
+    <th>基本资料</td>
+    <th>收藏时间</td> 
+  </tr>
+  <neq name="list" value="">
+  <volist name="list" id="qy">
+  <tr>
+  <td><input type="checkbox" id="checkbox" name="del_id[]" value="{$qy.id}" /></td>
+    <td><a href="View/user/uid/{$qy.be_collect}.html" target="_blank">{:nickname($qy['be_collect'])}</a></td>
+    <td>{$qy.age}岁,<eq name="qy.gender" value="1">女<else/>男</eq>,{$qy.city}</td>
+    <td>{$qy.time|date='Y-m-d H:i:s',###}</td> 
+  </tr>
+  </volist>
+  <tr>
+    <td><input type="submit" name="submit" id="delete" value="删除" /></td>
+    <td colspan="3">{$page}</td>
+  </tr>
+  <else/>
+  <tr>
+     <td colspan="4">您还没有收藏过其他人！</td>
+  </tr>
+  </neq>
+</table>
+</form>
+<else/>
+<table cellspacing="1" cellpadding="0" class="table_list">
+<caption>收藏我的人</caption>
+  <tr>
+    <th>用户名</td>
+    <th>基本资料</td>
+    <th>收藏时间</td> 
+  </tr>
+  <neq name="list" value="">
+  <volist name="list" id="qy">
+  <tr>
+    <td><a href="View/user/uid/{$qy.uid}.html" target="_blank">{:nickname($qy['uid'])}</a></td>
+    <td>{$qy.age}岁,<eq name="qy.gender" value="1">女<else/>男</eq>,{$qy.city}</td>
+    <td>{$qy.time|date='Y-m-d H:i:s',###}</td> 
+  </tr>
+  </volist>
+  <tr>
+    <td colspan="3">{$page}</td>
+  </tr>
+  <else/>
+  <tr>
+     <td colspan="3">您还没有被其他人收藏过！</td>
+  </tr>
+  </neq>
+</table>
+</if>
+   </div>
+</div>
+<include file="../Index/footer" />

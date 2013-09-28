@@ -1,0 +1,64 @@
+<include file="../Index/header" />
+<div id="main">
+    <include file="left" />
+    <div id="m_right" class="mrt10">
+         <div id="ann">
+           公告：<a href="">这里是网站公告！</a>
+         </div>
+         <h3>基本信息</h3>
+         <div id="baseinfo">
+         <UL>
+
+  <LI>用&nbsp;户&nbsp;名：{$username}</LI>
+
+  <LI>注册邮箱：{$email} </LI>
+
+  <LI>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：<SPAN 
+
+  id=ctl00_CPH_userGrade><eq name="group" value="7">VIP会员 到期:{$upgrade_end|date='Y-m-d',###}<else/>普通会员</eq></span> <span> <a href="{$root}?s=Pay/upgrade"> <font color="#FF0000">升级VIP</font></a></span></SPAN> </LI>
+
+  <LI>最近登录：{$login_time|date='Y-m-d H:i:s',###} </LI>
+
+  <LI id=ctl00_CPH_myKB>E币余额：<SPAN class=colorred>{$credit}</SPAN>点</LI></UL>
+  <div class="cl"></div>
+   </div>
+   <h3>快捷操作</h3>
+   <div id="quick_menu">
+    <a href="{$root}?s=Search"><img src="{$tpl}/Skins/images/icon_1.jpg" alt="搜索会员" /><br />搜索会员</a>
+
+    <a href="{$root}?s=Pay/showpayment"><img src="{$tpl}/Skins/images/icon_2.jpg" alt="财务管理" /><br />财务管理</a>
+
+    <a href="{$root}?s=Pay/upgrade"><img src="{$tpl}/Skins/images/icon_3.jpg" alt="升级VIP" /><br />升级VIP</a>
+
+    <a href="{$root}?s=Message/"><img src="{$tpl}/Skins/images/icon_4.jpg" alt="查看短信" /><br />查看短信</a>
+
+    <a href="{$root}?s=Member/profile"><img src="{$tpl}/Skins/images/icon_5.jpg" alt="资料管理" /><br />资料管理</a>
+
+          <div class="cl"></div>
+
+      </div>
+   <h3>VIP特权</h3>
+   <DIV id="viptq">
+
+    <form action="__ROOT__/?s=Pay/online" method="post" target="_blank">
+
+     <input type="hidden" name="amount" value="" /><input type="hidden" name="type" value="joinvip" />
+     <input type="hidden" name="payment" value="财付通" />
+
+
+&nbsp;<label><input name="amount" type="radio" value="150" /><U>150元/一年VIP</U></label> 一年免费查看异性联系方式+无限发送短信+VIP尊贵提示。<BR>
+
+&nbsp;<label><input name="amount" type="radio" value="280" checked="checked" /><U>280元/三年VIP</U> </label>三年免费查看异性联系方式+无限发送短信+搜索提前+VIP尊贵提示+赠送5000E币。<BR>
+
+&nbsp;<label><input name="amount" type="radio" value="450" /><U>450元/终身VIP</U></label> 永久免费查看异性联系方式+无限发送短信+排名靠前+诚信VIP推荐+赠送88888E币。<BR>
+
+
+&nbsp;<input type="submit" name="button" id="button" value="立即升级" class="button_style" /> <font color="red">*注：支持网银、手机充值卡支付，支付成功后自动升级。</font><br />
+
+</form>
+
+</DIV>
+    </div>
+
+</div><!--end main-->
+<include file="../Index/footer" />

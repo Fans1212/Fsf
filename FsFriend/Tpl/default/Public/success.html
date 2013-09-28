@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+<title>提示信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'>
+<load href ="__PUBLIC__/Images/style.css" />
+
+</head>
+<body>
+<div class="message">
+    <div class="corner_top_l">
+       <div class="corner_top_r">
+          <div class="head">{$msgTitle}</div>
+       </div>
+    </div>
+    <div class="content_l">
+       <div class="content_r">
+          <div class="content">
+          <table   cellpadding=0 cellspacing=0 >
+              <tr>
+                <td>
+                <eq name="msgTitle" value="操作成功！"><img src="__PUBLIC__/Images/ok.png" width="128" height="128" /><else/><img src="__PUBLIC__/Images/error.png" width="128" height="128" /></eq></td>
+                <td><present name="message" ><span>{$message}</span><br /></present>
+                <present name="error" ><span>{$error}</span><br /></present>
+                系统将在 <span style="color:blue;font-weight:bold">{$waitSecond}</span> 秒后自动跳转, <a href="{$jumpUrl}">立即跳转>></a> 
+                </td>
+              </tr>
+          </table>
+          </div>    
+       </div>
+    </div>
+</div>
+</body>
+</html>

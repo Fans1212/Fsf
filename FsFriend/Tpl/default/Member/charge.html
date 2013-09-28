@@ -1,0 +1,35 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>交易明细</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/upgrade">升级VIP</a></li><li><a href="__URL__/point">购买E币</a></li><li><a href="__URL__/showpayment">在线支付</a></li><li><a href="__URL__/charge">交易明细</a></li>
+       <div class="cl"></div>
+  </ul>
+<table cellspacing="1" class="table_list">
+<caption>交易明细</caption>
+   <tr>
+      <th>类型</th>
+      <th>收支</th>
+      <th>金额</th>
+      <th>备注</th>
+      <th>时间</th>
+   </tr>
+   <volist name="list" id="qy">
+  <tr>
+    <td>{$qy.type}</td>
+    <td>{$qy.in}</td>
+    <td>{$qy.num}</td>
+    <td>{$qy.item}</td>
+    <td>{$qy.time|date='Y-m-d H:i:s',###}</td>
+  </tr>
+  </volist>
+  <tr>
+  <td colspan="5">{$page}</td>
+  </tr>
+</table>
+   </div>
+</div>
+<include file="../Index/footer" />

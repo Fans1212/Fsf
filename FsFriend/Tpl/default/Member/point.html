@@ -1,0 +1,76 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<script type="text/javascript">
+<!--
+function check()
+{
+    check_amount();
+    var total = $("input[name=amount]:checked").val();
+    if(total > {$money})
+    {
+        alert('资金不足，请充值！');
+        return false;
+    }
+    return true;
+}
+function check_amount()
+{   
+    var total = $("input[name=amount]:checked").val();
+	var amount = {$money};
+	if(total > {$money})
+    {    
+	     var amount=total-{$money};
+         var url = '__URL__/showpayment/amount/'+amount;
+         $('#amount').html('您的资金不足，请<a href="'+url+'" style="color:red;">点击这里充值</a>！');
+         return false;
+    }
+    else 
+    {
+        $('#amount').html('');
+        return true;
+    }
+   
+}
+//-->
+</script>
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>购买E币</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/upgrade">升级VIP</a></li><li><a href="__URL__/point">购买E币</a></li><li><a href="__URL__/showpayment">在线支付</a></li><li><a href="__URL__/charge">交易明细</a></li>
+       <div class="cl"></div>
+  </ul>
+<form action="__URL__/buypoint" method="post" onSubmit="return check();">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<caption>在线支付</caption>
+   <tr>
+     <th width="150">用户名：</th>
+     <td>{$username} (身份：<eq name="group" value="7">VIP会员 到期:{$upgrade_end|date='Y-m-d',###}<else/>普通会员</eq>)</td>
+   </tr>
+   <tr>
+     <th>资金余额：</th>
+     <td><font color="red">{$money}</font>元 <span id="amount" name="amount"></span></td>
+   </tr>
+   <tr>
+     <th>E币余额：</th>
+     <td>{$credit}</td>
+   </tr>
+   <tr>
+    <th>购买类型：</th>
+    <td><label><input type="radio" name="amount" id="amount" checked value="150" onClick="check_amount()" ><font color="green">升级一年VIP会员（150元）</font></label><br />
+    <label><input type="radio" name="amount" value="280" onClick="check_amount()" ><font color="green">升级三年VIP会员（280元）</font></label><br />
+    <label><input type="radio" name="amount" value="480" onClick="check_amount()" ><font color="green">升级终身VIP会员（480元）</font></label><br />
+    <label><input type="radio" name="amount" value="30" onClick="check_amount()" >购买300E币（30元）</label><br />
+    <label><input type="radio" name="amount" value="50" onClick="check_amount()" >购买800E币（50元）</label><br />
+    <label><input type="radio" name="amount" value="100" onClick="check_amount()" >购买1500E币（100元）</label></td>
+  </tr> 
+  <tr>
+    <td> </td>
+    <td><input name="submit" type="submit" class="button_style" value="确认购买" /></td>
+  </tr>
+</table>
+</form>
+   </div>
+</div>
+<include file="../Index/footer" />

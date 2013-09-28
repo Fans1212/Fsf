@@ -1,0 +1,53 @@
+<include file="../Index/header" />
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>当前位置：首页 >> 会员日记</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <div class="dy_list">
+           <ul>
+           <volist name="list" id="qy">
+              <li><img src="{$qy.pic}" width="80" height="80" /><p class="dy_title">[<a href="Diary/index/cateid/{$qy.cateid}" class="cate">{$qy.cate}</a>]<a class="tl" href="View/article/id/{$qy.id}.html" target="_blank">{$qy.diarytitle}</a></p>
+              <p class="author">作者：<a href="View/user/uid/{$qy.uid}.html" target="_blank">{$qy.username|default='未知'}，{$qy.age}岁，<eq name="qy.gender" value="0">男<else/>女</eq>，{$qy.city}</a> 发表时间：{$qy.thedate|date='Y-m-d H:i',###}</p>
+              <p class="abstract">{$qy.diarytxt|msubstr=0,100}</p>
+              <div class="clear"></div>
+              </li>
+           </ul>
+        </volist>
+        <div id="page" class="mrb10">{$page}</div>
+        </div>
+        
+    </div>
+    <div id="main_r">
+     <div class="head mrt10">
+           <div class="rbg">
+           <h3>快速搜索</h3>
+           </div>
+      </div>
+      <div class="cont">
+      <include file="../Search/search_form" />
+       </div>
+       <div class="head mrt10">
+           <div class="rbg">
+           <h3>人气会员推荐</h3>
+           </div>
+      </div>
+      <div class="cont"><php>$member_recom=$qylist->qyuser('gender:1;num:7;avatar:true;order:hits desc;');</php>
+         <ul class="member_recom">
+            <volist name="member_recom" id="qy">
+            <li>
+            <img src="<neq name="qy.avatar" value="0">{:avatar("$qy[avatar]")}<else/>{$root}Public/Uploads/avatar/nophoto{$qy.gender}.gif</neq>" alt="{$qy.nickname}" width="100" height="110" />
+            <p><a href="{$qy.url_pro}" class="name" target="_blank">{$qy.nickname}</a></p>
+            <p>{$qy.age}岁,<eq name="qy.gender" value="0">男<else/>女</eq></p>
+            <p style="height:40px;">{$qy.city}</p>
+            <p style="text-align:right;"><a href="{$qy.url_pro}" target="_blank">详细资料>></a></p>
+            </li>      
+            </volist>   
+         </ul>
+      </div>
+    </div>
+</div>
+<include file="../Index/footer" />

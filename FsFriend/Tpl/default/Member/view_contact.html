@@ -1,0 +1,66 @@
+<include file="../Index/header" />
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" />
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" />  
+        <div class="pro_details">
+        <div class="pro_nav cl">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}">TA的日记</a></li>
+           <li><a href="View/contact/uid/{$uid}.html" class="on">联系方式</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>
+       
+        <h2 class="require"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">{$nickname}的联系方式</h2>
+        <eq name="isacce" value="accyes">
+         <table class="higher" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr>
+							<th>QQ号：</th>
+							<td>&nbsp;{$qq|default='没有填写'}</td>
+							<th>手机：</th>
+							<td>&nbsp;{$mobile|default='没有填写'}</td>
+						</tr>
+						<tr>
+							<th>电话：</th>
+							<td>&nbsp;{$tel|default='没有填写'}</td>
+							<th>MSN：</th>
+							<td>&nbsp;{$msn|default='没有填写'}</td>
+						</tr>
+						<tr>
+							<th>Email：</th>
+							<td>&nbsp;{$email|default='没有填写'}</td>
+                            <th></th>
+							<td>&nbsp;</td>
+							
+						</tr>
+						<tr>
+						  <th>注意：</th>
+						  <td colspan="3" class="long"><p>1、查看同一会员只收费一次，再次查看不会扣费！</p> 
+        <p>2、如果发现该会员联系方式有误，请点击举报，一经核实将退还E币！</p> </td>
+						  </tr>
+			        </tbody>
+        </table>
+        <else/>
+           <div class="jqmdMSG">
+<img class="fb" src="{$tpl}Skins/images/forbidden.png" /><p>查看会员联系方式需要10E币，您的E币不足，请充值或者升级VIP。</p><a href="Pay/point" class="rech">充值E币</a><a href="Pay/upgrade" class="rech">升级VIP</a>
+</div>
+        <div class="cl"></div>
+        </eq>
+      </div>
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<include file="../Index/footer" />

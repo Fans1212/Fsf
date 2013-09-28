@@ -1,0 +1,44 @@
+<include file="../Index/header" />
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" /> 
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" />   
+        <div class="pro_details">
+        <div class="pro_nav cl">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}" class="on">TA的日记</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>
+       
+        <h2 class="profile"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">{$nickname}的日记</h2>
+        <div class="view_diary">
+          <ul>
+          <neq name="list" value="">
+            <volist name="list" id="qy">
+            <li>
+            <p class="title"><a href="View/article/id/{$qy.id}.html">{$qy.diarytitle}</a><span class="date">{$qy.thedate|date='Y-m-d H:i',###}</span></p>
+            <p class="abs">{$qy.diarytxt|msubstr=0,200}...<a href="View/article/id/{$qy.id}.html" class="readall" target="_blank">阅读全文>></a></p></li>
+            </volist>
+            <else/>
+            <img class="no_diary" src="{$tpl}/Skins/images/no_diary.jpg" />
+            </neq>
+          </ul>
+          <div id="page" class="mrb10">{$page}</div>
+        </div>
+      </div>
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<include file="../Index/footer" />

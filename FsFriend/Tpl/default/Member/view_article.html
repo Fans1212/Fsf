@@ -1,0 +1,50 @@
+<include file="../Index/header" />
+
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" /> 
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" />   
+        <div class="pro_details">
+        <div class="pro_nav cl">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}">TA的日记</a></li>
+           <li><a href="View/article/id/{$id}.html" class="on">阅读日记</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>
+       <script type="text/javascript" src="__PUBLIC__/Js/ajax.js" charset="utf-8"></script>
+        <h2 class="profile"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">{$nickname}的日记</h2>
+        <div class="show_article">
+         <h4>{$diarytitle}</h4>
+         <p class="thedate">时间：{$thedate|date='Y-m-d H:i',###} 浏览:{$viewtimes}</p>
+         <div class="article_content">
+         {$diarytxt}
+         </div>
+         <div class="mark">
+                <div onclick="plus_diary_ud({$id},1,'{$root}')" onfocus="this.blur()" onmouseout="this.style.backgroundPosition='-189px 0'" onmouseover="this.style.backgroundPosition='0 0'" id="mark0" style="background-position: -189px 0pt;">
+                    <div class="bar"><div style="width: 0px;" id="eimg1"></div></div>
+                    <span id="barnum1"><span id="sp1">0%</span> (<span id="s1">0</span>)</span>
+                </div>
+                <div onclick="plus_diary_ud({$id},2,'{$root}')" onfocus="this.blur()" onmouseout="this.style.backgroundPosition='-378px 0'" onmouseover="this.style.backgroundPosition='-567px 0'" id="mark1" style="background-position: -378px 0pt;">
+                    <div class="bar"><div style="width: 0px;" id="eimg2"></div></div>
+                    <span id="barnum2"><span id="sp2">0%</span> (<span id="s2">0</span>)</span>
+                </div>
+            </div>
+         <script type="text/javascript">plus_diary_ud({$id},0,'{$root}');</script> 
+        </div>
+      </div>
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<include file="../Index/footer" />

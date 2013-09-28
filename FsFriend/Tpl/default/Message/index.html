@@ -1,0 +1,45 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/css.js"></script>
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>收件箱</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/">收件箱</a></li><li><a href="__URL__/outbox">发件箱</a></li>
+       <div class="cl"></div>
+  </ul>
+<form method="post" name="myform" action="__URL__/del">
+<table cellspacing="1" cellpadding="0" class="table_list">
+<caption>收件箱</caption>
+  <tr>
+    <th>删除</td>
+    <th>发件人</td>
+    <th>标题</td>
+    <th>时间</td>
+    <th>状态</td>    
+  </tr>
+  <neq name="list" value="">
+  <volist name="list" id="msg">
+  <tr>
+  <td><input type="checkbox" id="checkbox" name="del_msgid[]" value="{$msg.id}" /></td>
+    <td>{:nickname($msg['from'])}</td>
+    <td class="align_l"><a class="list_style_msg" href="__URL__/view/mid/{$msg.id}" >{$msg.m_title}</a></td>
+    <td>{$msg.time|date='Y-m-d H:i:s',###}</td>
+    <td><neq name="msg.status" value="0">已读<else/><font color="red">未读</font></neq></td>    
+  </tr>
+  </volist>
+  <tr>
+    <td><input type="submit" name="submit" id="delete" value="删除" /></td>
+    <td colspan="4">{$page}</td>
+  </tr>
+  <else/>
+  <tr>
+     <td colspan="5">您的收件箱没有短信！</td>
+  </tr>
+  </neq>
+</table>
+</form>
+   </div>
+</div>
+<include file="../Index/footer" />

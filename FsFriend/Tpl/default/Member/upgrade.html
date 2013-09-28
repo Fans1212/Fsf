@@ -1,0 +1,80 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/css.js"></script>
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>升级VIP</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/upgrade">升级VIP</a></li><li><a href="__URL__/point">购买E币</a></li><li><a href="__URL__/showpayment">在线支付</a></li><li><a href="__URL__/charge">交易明细</a></li>
+       <div class="cl"></div>
+  </ul>
+<table cellspacing="1" cellpadding="0" class="table_list">
+<form action="__ROOT__/?s=Pay/online" method="post" target="_blank">
+<caption>会员等级与资费</caption>
+   <tr>
+     <th width="110">等级</th>
+     <th width="*">会员权限</th>
+     <th width="60">期限</th>
+     <th width="60">资费</th>
+     <th width="110">立即升级</th>
+   </tr>
+   <tr>
+     <td rowspan="3">尊贵VIP会员</td>
+     <td rowspan="3" class="align_l">搜索权限:所有搜索条件, 查看所有VIP会员和普通会员的详细联系方式。<br />
+展示权限:首页、搜索结果页推荐（附照片), 可展示自己联系办法, 搜索排序在普通会员前列，发送和查看短信, 普通会员的全部权限。</td>
+     <td>终身</td>
+     <td>480元</td>
+     <input type="hidden" name="amount" value="" /><input type="hidden" name="type" value="joinvip" />
+     <input type="hidden" name="payment" value="财付通" />
+     <td><input type="submit" value="升级" onclick="this.form.amount.value='480'" /></td>
+   </tr>
+   <tr>
+     <td>三年</td>
+     <td>280元</td>
+     <td><input type="submit" value="升级" onclick="this.form.amount.value='280'" /></td>
+   </tr>
+   <tr>
+     <td>一年</td>
+     <td>150元</td>
+     <td><input type="submit" value="升级" onclick="this.form.amount.value='150'" /></td>
+   </tr>
+   <tr>
+     <td>普通会员</td>
+     <td class="align_l"><p>搜索权限:简单搜索条件，只能搜索10天之前注册的会员，查看其他会员联系方式扣除10E币/位。<br />
+     展示权限:长期展示个人资料，免费发送/查看短信10条，多出的1E币/条。搜索排序位于VIP会员之后。</p></td>
+     <td>长期</td>
+     <td>免费</td>
+     <td><input type="button" class="button_style2" onclick="location.href='__URL__/point'" value="充值E币"></td>
+   </tr>
+   <tr>
+     <td>备注</td>
+     <td colspan="4" class="align_l">1、以上支付方式采用网银在线支付系统，请确保您的银行卡已经开通网上支付；<br />
+     2、支付成功后即可自动升级VIP会员，由于网络通信问题没能自动升级的我们会在3个小时内给您升级VIP；<br />
+     3、如果您没有网上银行，您可以使用以下支付方式。</td>    
+     </tr>
+     </form>
+</table>
+<table cellspacing="1" class="table_form">
+<caption>其他支付方式</caption>
+   <tr>
+     <td width="227"><img src="__PUBLIC__/Images/pay_easyown_1.gif" width="195" height="56" /></td>
+     <td>支付步骤：<br />
+     1、准备好手机充值卡，支持中国移动、电信及联通10、30、50、100面值的充值卡；<br />
+     2、点击进入<a href="__URL__/showpayment"><font color="red">在线支付</font></a>，在“充值金额”一栏填写与您充值卡面值一致的金额；<br />
+     3、提交后进入网银支付页面，选择“手机充值卡支付”，填写您的卡号及密码，确认支付；<br />
+     4、支付成功后您的资金立即到账，然后您可以选择<a href="__URL__/point"><font color="red">升级VIP</font></a>或者<a href="__URL__/point"><font color="red">充值E币</font></a>；<br />
+     注意：每次支付都会有订单记录，如果没能自动到账，我们客服会在6小时内给您审核。</td>
+   </tr>
+   <tr>
+     <td><img src="__PUBLIC__/Images/alipay.gif" width="227" height="62" /></td>
+     <td>支付宝支付步骤：<br />
+     1、登录您的支付宝账户，<a href="http://www.alipay.com" target="_blank"><font color="#3300FF">点击进入支付宝>></font></a><br />
+     2、点击“我要付款”，给我们的账户oldhc@yahoo.cn付款，“付款理由”一栏请<b>填写您的用户名</b>；<br />
+     3、我们的客服将在6个小时内审核，将资金打入您的账户；<br />
+     4、资金到账后，您可以选择<a href="__URL__/point"><font color="red">升级VIP</font></a>或者<a href="__URL__/point"><font color="red">充值E币</font></a>；</td>
+   </tr>
+</table>
+   </div>
+</div>
+<include file="../Index/footer" />

@@ -1,0 +1,94 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>在线支付</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/upgrade">升级VIP</a></li><li><a href="__URL__/point">购买E币</a></li><li><a href="__URL__/showpayment">在线支付</a></li><li><a href="__URL__/charge">交易明细</a></li>
+       <div class="cl"></div>
+  </ul>
+<form action="__URL__/online" method="post" target="_blank">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<caption>在线支付</caption>
+   <tr>
+     <th>用户名：</th>
+     <td>{$username} (资金余额：<font color="red">{$money}</font>)</td>
+   </tr>
+   <tr>
+     <th>邮箱：</th>
+     <td><input type="text" name="email" value="{$email}" ></td>
+   </tr>
+   <tr>
+     <th>支付金额：</th>
+     <td><input name="amount" id="amount" value="{$amount}" style="width:50px;" />元 请填写整数</td>
+   </tr>
+   <!--
+   <tr>
+     <th>支付方式：</th>
+     <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><label><input type="radio" name="bankid" value="1002" />中国工商银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1001" />招商银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1028" />广州银联</label></td>
+  </tr>
+  <tr>
+    <td><label><input type="radio" name="bankid" value="1003" />中国建设银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1009" />兴业银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1032" />北京银行</label></td>
+  </tr>
+  <tr>
+    <td><label><input type="radio" name="bankid" value="1005" />中国农业银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1006" />中国民生银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1020" />中国交通银行</label></td>
+  </tr>
+  <tr>
+    <td><label><input type="radio" name="bankid" value="1004" />上海浦东发展银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1008" />深圳发展银行</label></td>
+    <td><label><input type="radio" name="bankid" value="1022" />中国光大银行</label></td>
+  </tr>
+  <tr>
+    <td><label><input type="radio" name="bankid" value="0" />财付通余额</label></td>
+    <td><label><input type="radio" name="bankid" value="" />手机充值卡</label></td>
+    <td><label><input type="radio" name="bankid" value="" />&nbsp;</label></td>
+  </tr>
+</table>
+     </td>-->
+   <tr>
+    <th>支付方式：</th><input type="hidden" name="bankid" value="0" />
+    <td><label><input type="radio" name="payment" value="财付通" checked="checked" >财付通</label> <label><input type="radio" name="payment" value="手机充值卡" >手机充值卡</label> <label><input type="radio" name="payment" value="支付宝" >支付宝</label></td>
+  </tr> 
+  <tr>
+     <th>留言：</th>
+     <td><textarea name="remark" id="amount" style="width:200px;height:60px;" onClick="this.value=''">如果您已经通过支付宝付款，请填写该笔交易号</textarea></td>
+  </tr>
+  <tr>
+    <td><input name="type" type="hidden" value="在线支付" /></td>
+    <td><input name="submit" type="submit" class="button_style" value="在线支付" /></td>
+  </tr>
+</table>
+</form>
+<table cellspacing="1" class="table_list">
+<caption>支付记录</caption>
+   <tr>
+      <th>订单号</th>
+      <th>金额</th>
+      <th>备注</th>
+      <th>时间</th>
+      <th>方式</th>
+      <th>状态</th>
+   </tr>
+   <volist name="list" id="qy">
+  <tr>
+    <td>{$qy.orderid}</td>
+    <td>{$qy.amount}</td>
+    <td>{$qy.remark}</td>
+    <td>{$qy.time|date='Y-m-d H:i:s',###}</td>
+    <td>{$qy.payment}</td>
+    <td><neq name="qy.status" value="0"><font color="red">已审核</font><else/>未审核</neq></td>
+  </tr>
+  </volist>
+</table>
+   </div>
+</div>
+<include file="../Index/footer" />

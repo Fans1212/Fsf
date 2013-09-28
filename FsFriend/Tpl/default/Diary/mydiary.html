@@ -1,0 +1,44 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="{$tpl}/Skins/member.css">
+<div id="main">
+    <include file="../Member/left" />
+    <div id="m_right" class="mrt10">
+       <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>我的日记</p>
+       <ul id="m_subnav">
+          <li><a href="__URL__/mydiary">日记列表</a></li><li><a href="__URL__/add">发表日记</a></li>
+          <div class="cl"></div>
+       </ul>
+<form id="upload" method='post' action="{$root}/?s=Upload/" enctype="multipart/form-data">
+<table  border="0" cellspacing="1" class="table_list">
+<caption>我的日记</caption>
+   <tr>
+     <th>标题</th>
+     <th>分类</th>
+     <th>时间</th>
+     <th>状态</th>
+     <th>操作</th>
+   </tr>
+   <neq name="list" value="">
+  <volist name="list" id="qy">
+  <tr>
+    <td class="align_l"><a href="{$root}?s=View/article/id/{$qy.id}" class="list_style_diary" target="_blank">{$qy.diarytitle}</a></td>
+    <td>{$qy.cateid}</td>
+    <td>{$qy.thedate|date='Y-m-d H:i:s',###}</td>
+    <td><eq name="qy.stat" value="1"><font color="green">已审核</font><else/>未审核</eq></td>
+    <td><a href="__URL__/edit/id/{$qy.id}">编辑</a>|<a href="__URL__/del/id/{$qy.id}">删除</a></td>
+  </tr>
+  </volist>
+  <tr>
+     <td colspan="5">{$page}</td>
+  </tr>
+  <else/>
+  <tr>
+     <td colspan="5">您还没发表过日记！<a href="__URL__/add">立即发表新日记>></a></td>
+  </tr>
+  </neq>
+
+</table>
+</form>
+</div>
+</div>
+<include file="../Index/footer" />

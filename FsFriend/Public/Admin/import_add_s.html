@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+     <td class="center">
+      <p class="position"><span>网站管理</span>导入数据</p>
+            <div class="sub_nav"><ul><li><a href="__URL__/import">导入数据管理</a></li><li><a href="__URL__/add_rule">添加导入规则</a></li></ul><div class="cl"></div></div>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_list">
+      <form name="myform" action="__URL__/add_rule" method="post">
+         <input type="hidden" name="step" value="2" />
+         <input type="hidden" name="setting[each_num]" value="{$each_num}" />
+         <input type="hidden" name="setting[name]" value="{$name}" />
+         <input type="hidden" name="setting[note]" value="{$note}" />
+         <input type="hidden" name="setting[in_table]" value="{$in_table}" />
+         <input type="hidden" name="setting[db_type]" id="dbtype" value="{$db_type}" />
+         <input type="hidden" name="setting[db_host]" id="dbhost" value="{$db_host}" />
+         <input type="hidden" name="setting[db_user]" id="dbuser" value="{$db_user}" />
+         <input type="hidden" name="setting[db_pass]" id="dbpw" value="{$db_pass}" />
+         <input type="hidden" name="setting[db_charset]" id="dbcharset" value="{$db_charset}" />
+         <input type="hidden" name="setting[db_name]" id="dbname" value="{$db_name}" />
+         <input type="hidden" name="setting[db_table]" id="db_tables" value="{$db_table}" />
+         <input type="hidden" name="setting[db_where]" value="{$db_where}" />
+         <input type="hidden" name="setting[last_id]" value="{$last_id}" />
+      <caption>数据表字段对应关系</caption>
+      <tr>
+        <th>导入字段</th>
+        <th>源数据表字段</th>
+        <th>默认值</th>
+        <th>处理函数</th>    
+      </tr>
+      <php>foreach($in_field as $k=>$v){</php>
+      <tr>
+        <td class="align_r">{$v}</td>
+        <td class="list_fields align_l" width="40%"><input type="text" name="setting[{$v}][field]" id="field_{$k}" class="fields" value="{$arr[$v]['field']}" /> <span></span></td>
+        <td class="align_l"><input type="text" name="setting[{$v}][value]" value="{$arr[$v]['value']}" /></td>
+        <td class="align_l"><input type="text" name="setting[{$v}][fun]" value="{$arr[$v]['fun']}" /></td>
+      </tr>
+      <php>}</php>
+      <tr>
+        <td class="align_r"=> 主键字段：</td>
+        <td class="align_l" colspan="3"><input type="text" name="setting[keyid]" value="{$arr['keyid']}" /> 请填写源表的主键</td>
+      </tr>
+      <tr>
+        <td class="align_r"=> </td>
+        <td class="align_l" colspan="3"><input type="submit" name="submit" value="保存" /> <input type="button" value="返回" onclick="window.history.go(-1)" /></td>
+      </tr>
+      </form>
+      </table>
+</body>
+</html>
+<script type="text/javascript">
+var html='';
+var id = '';
+$(document).ready(function(){
+$(".fields").click(function(){
+	$(".list_fields").children('span').html('&nbsp;');
+	id = $(this).attr('id');
+	if(html!='' && html != 'no')
+	{
+		$(this).parent('td').children('span').html(html);
+	}
+	else
+	{
+		html = $.ajax({
+		type: "GET",
+		url:'http://127.0.0.1/thinkphp/index.php/AdminCon/get_field/dbtype/'+$('#dbtype').val()+'/dbhost/'+$('#dbhost').val()+'/dbuser/'+$('#dbuser').val()+'/dbpw/'+$('#dbpw').val()+'/dbname/'+$('#dbname').val()+'/charset/'+$('#charset').val()+'/tables/'+$('#db_tables').val()+'', 
+		data:'http://127.0.0.1/thinkphp/index.php/AdminCon/get_field/dbtype/mysql/dbhost/localhost/dbuser/root/dbpw/123456/dbname/qy/charset/utf8/tables/qy_member',
+		async: false 
+		}).responseText;
+		if(html!='' && html != 'no')
+		{
+			$(this).parent('td').children('span').html(html);
+		}
+	}
+});
+})
+
+$('#dbtype').change(function() {
+	if(this.value == 'mysql')
+	{
+		$('#dbuser').attr('require', 'true');
+		$('dbpw').attr('require', 'true');
+	}
+	else
+	{	
+		$('#dbuser').attr('require', 'false');
+		$('dbpw').attr('require', 'false');
+	}
+});
+
+function get_tables()
+{
+	if($('#dbtype').val() != 'mysql') return false;
+	$.get("?mod=phpcms&file=import&action=get_tables",{dbtype:$('#dbtype').val(), dbhost:$('#dbhost').val(), dbuser:$('#dbuser').val(), dbpw:$('#dbpw').val(), dbname:$('#dbname').val(), charset:$('#charset').val()}, function(data){
+		$("#select_tables").html(data);
+	});
+}
+
+function put_fields(obj)
+{
+	if(obj!='')
+	{
+		$("#"+id).val(obj);
+	}
+}
+
+function in_tables(val)
+{
+	if($('#db_tables').val()!='')
+	{
+		$('#db_tables').val($('#db_tables').val()+','+val);
+	}
+	else
+	{
+		$('#db_tables').val(val);
+	}
+}
+</script>

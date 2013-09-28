@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <p class="position"><span>网站管理</span>导入数据</p>
+      <div class="sub_nav"><ul><li><a href="__URL__/import">导入数据管理</a></li><li><a href="__URL__/add_rule">添加导入规则</a></li></ul><div class="cl"></div></div>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <form name="myform" action="__URL__/add_rule" method="post">
+      <input type="hidden" name="step" value="1" />
+       <input type="hidden" name="edit" value="{$edit}" />
+      <caption>添加导入配置</caption>
+      <tr>
+        <td class="align_r">配置名称</td>
+        <td class="align_l"><input type="text" name="setting[name]" value="{$name}" /> 只能是英文、数字和下划线</td>
+      </tr>
+      <tr>
+        <td class="align_r">配置说明</td>
+        <td class="align_l"><input type="text" name="setting[note]" value="{$note}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">导入到数据表</td>
+        <td class="align_l"><select name="setting[in_table]" ><volist name="table" id="qy"><option value="{$qy}" <eq name="qy" value="$in_table"> selected="selected" </eq>>{$qy}</option></volist></select></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据库类型</td>
+        <td class="align_l"><select name="setting[db_type]" ><option value="mysql">mysql</option></select></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据库主机</td>
+        <td class="align_l"><input type="text" name="setting[db_host]" value="{$db_host}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据库用户名</td>
+        <td class="align_l"><input type="text" name="setting[db_user]" value="{$db_user}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据库密码</td>
+        <td class="align_l"><input type="text" name="setting[db_pass]" value="{$db_pass}" /></td>
+      </tr>
+      <tr>
+      <td class="align_r">数据库字符集</td>
+      <td class="align_l"><label>
+        <input type="radio" name="setting[db_charset]" <eq name="db_charset" value="gbk">checked</eq> id="dbcharset" value="gbk" />
+        GBK</label>
+        
+        <label>
+          <input type="radio" name="setting[db_charset]" id="dbcharset" <eq name="db_charset" value="gb2312">checked</eq> value="gb2312" />
+          gb2312</label>
+        
+        <label>
+          <input type="radio" name="setting[db_charset]" <eq name="db_charset" value="utf8">checked</eq> id="dbcharset" value="utf8" />
+          UTF8</label>
+        
+        <label>
+          <input type="radio" name="setting[db_charset]" id="dbcharset" <eq name="db_charset" value="latin1">checked</eq> value="latin1" />
+          latin1</label></td>
+    </tr>
+      <tr>
+        <td class="align_r">数据库名称</td>
+        <td class="align_l"><input type="text" name="setting[db_name]" value="{$db_name}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据表</td>
+        <td class="align_l"><input type="text" name="setting[db_table]" value="{$db_table}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">数据获取条件</td>
+        <td class="align_l"><input type="text" name="setting[db_where]" value="{$db_where}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">每次导入条数</td>
+        <td class="align_l"><input type="text" name="setting[each_num]" value="{$each_num}" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">上次导入最大ID</td>
+        <td class="align_l"><input type="text" name="setting[last_id]" value="<eq name="last_id" value="">0<else/>{$last_id}</eq>" /></td>
+      </tr>
+      <tr>
+        <td class="align_r"> </td>
+        <td class="align_l"><input type="submit" name="submit" value="提交" /></td>
+      </tr>
+      </form>
+      </table>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

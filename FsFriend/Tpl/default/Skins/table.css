@@ -1,0 +1,23 @@
+/* CSS Document */
+/*列表样式，表单样式，提示信息样式*/
+td,th{font-size:12px;}
+.table_list, .table_form, .table_info,.table_reg{ margin:0 auto; width:100%;margin-top:6px; background:#D54EA8; border:0px solid #D54EA8;}
+.table_reg{background:#fff;}
+.table_list caption, .table_form caption, .table_info caption { border:1px solid #D54EA8; border-bottom-width:0; border-top-width:0;font-weight:bold; color: #B51539; background:url(images/sc_02.gif) repeat-x 0 0; height:26px; line-height:26px;text-align:center;}
+.table_form, .table_info {}
+.table_form tr,.table_info tr,.table_list tr{ background-color:#fff;}
+.table_reg th{text-align:right;font-weight:normal;font-size:14px;}
+.table_form td, .table_form th, .table_info td,.table_list td,.table_reg td{line-height:150%;padding:4px; }
+.table_form th{ text-align:right; padding-right:5px;}
+.table_form th strong, .table_info th strong { color:#333;}
+.table_list{}
+.table_list th, th.form_th { text-align:center; color:#000; background: #FDEDFA url(../images/bg_table.jpg) repeat-x 0 -26px; line-height:22px; height:22px;}
+.table_list td {text-align:center;}
+th.form_th { text-align:center; text-indent:2em; font-weight:bold; padding:0; line-height:1.8em;}
+td.align_left { text-align:left;}
+td.align_l { text-align:left;}
+td.align_r { text-align:right;}
+.table_info td { padding:4px;}
+.table_reg td span.noti{color:#666;padding-left:0.6em;}
+/*表格变色*/
+.mouseover { background-color:#FDEDFA !important;}

@@ -1,0 +1,12 @@
+/* CSS Document */
+@import url('search.css');
+.dy_list{border:1px solid #D54EA8;border-top:0;}
+.dy_list li{border-bottom:1px dashed #ccc;}
+.dy_list li img {float:left;padding:1px;border:1px solid #CCC;margin:10px;}
+.dy_list li p {width:608px;float:right;padding-right:10px;}
+.dy_list li p.dy_title{height:22px;line-height:22px;font-size:14px;font-weight:bold;color:#666;margin-top:10px;}
+.dy_list li p.dy_title a.tl{color: #F30;}
+.dy_list li p.dy_title a.cate{color:#333;}
+
+.dy_list li p.author{color:#666;line-height:15px;}
+.dy_list li p.abstract{line-height:18px; text-indent:2em;}

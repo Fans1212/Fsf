@@ -1,0 +1,1 @@
+document.write("<a href=\"http://www.98qing.com/Pay/Upgrade\"><img src=\"./Public/ads/95090.gif\"  /></a>");

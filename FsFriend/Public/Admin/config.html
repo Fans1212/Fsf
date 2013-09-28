@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="myform" action="__URL__/configSave" method="post">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <p class="position"><span>网站管理</span>基本设置</p>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <caption>网站基本设置</caption>
+      <tr>
+        <td class="align_r">网站名称</td>
+        <td class="align_l"><input type="text" name="config[SITE_NAME]" size="35" maxlength="50" value="{$SITE_NAME}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">网站地址</td>
+        <td class="align_l"><input  type="text" name="config[SITE_URL]" size="35" maxlength="50" value="{$SITE_URL}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">安装目录</td>
+        <td class="align_l"><input  type="text" name="config[SITE_PATH]" size="35" maxlength="50" value="{$SITE_PATH}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">网站标题</td>
+        <td class="align_l"><input name="config[SITE_TITLE]"  type="text" value="{$SITE_TITLE}" size="35"></td>
+      </tr>
+      <tr>
+        <td class="align_r">关键字</td>
+        <td class="align_l"><input name="config[SITE_KEYWORDS]"  type="text" value="{$SITE_KEYWORDS}" size="35"></td>
+      </tr>
+      <tr>
+        <td class="align_r">网站描述</td>
+        <td class="align_l"><input name="config[SITE_DESCRIPTION]" type="text" value="{$SITE_DESCRIPTION}" size="35" ></td>
+      </tr>
+      <tr>
+        <td class="align_r">版权信息</td>
+        <td class="align_l"><textarea name="config[SITE_COPYRIGHT]" style="width:500px;height:100px">{$SITE_COPYRIGHT}</textarea></td>
+      </tr>
+      <tr>
+        <td class="align_r">站长EMAIL</td>
+        <td class="align_l"><input  type="text" name="config[SITE_EMAIL]" size="35" maxlength="50" value="{$SITE_EMAIL}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">网站ICP备案号</td>
+        <td class="align_l"><input type="text" name="config[SITE_ICP]" size="35" value="{$SITE_ICP}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">统计代码</td>
+        <td class="align_l"><textarea name="config[SITE_STATS]" style="width:500px; height:100px">{$SITE_STATS}</textarea></td>
+      </tr>
+      <tr>
+        <td class="align_r">注册需要审核</td>
+        <td class="align_l"><input type="radio" name="config[REG_AUDIT]" value="1" <eq name="REG_AUDIT" value='1'>checked</eq>>是 <input type="radio" name="config[REG_AUDIT]" value="0" <eq name="REG_AUDIT" value='0'>checked="checked"</eq>>否</td>
+      </tr>
+      <tr>
+        <td class="align_r">smtp地址</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_HOST]" size="35" value="{$EMAIL[SMTP_HOST]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">端口</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_PORT]" size="35" value="{$EMAIL[SMTP_PORT]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">邮箱用户名</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_USERNAME]" size="35" value="{$EMAIL[SMTP_USERNAME]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">邮箱密码</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_PASSWORD]" size="35" value="{$EMAIL[SMTP_PASSWORD]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">发件人邮箱</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_FROM_TO]" size="35" value="{$EMAIL[SMTP_FROM_TO]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">发件人姓名</td>
+        <td class="align_l"><input type="text" name="config[EMAIL][SMTP_FROM_NAME]" size="35" value="{$EMAIL[SMTP_FROM_NAME]}"></td>
+      </tr>
+      <tr>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_l">            <input type="submit" name="submit" id="submit" value=" 提交 " >
+            <input type="reset" name="Input" value=" 重置 " ></td>
+      </tr>
+          </table>
+      
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

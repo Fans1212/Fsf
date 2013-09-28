@@ -1,0 +1,807 @@
+<include file="../Index/header" />
+<link href="{$tpl}/Skins/member.css" rel="stylesheet" type="text/css" /> 
+<script language="JavaScript" src="__PUBLIC__/Js/cs1s.js"></script>
+<div id="main">
+    <div id="main_l" class="mrt10 border_1">
+
+        <div class="search_form">
+        <p class="search_h4">基本搜索</p>
+        <table cellspacing="0" class="table_form">
+        <tr>
+        <td width="40%"><table><form name="myform" method="get" action="{$root}?s=/Search/base">
+           <tr><input type="hidden" name="s" value="/Search/base" />
+              <td class="align_r">性 别：</td>
+              <td><span style="width:60px"><label><input type="radio" name="gender" id="gender" value="0" style="border:0px"   checked/> 男性</label></span> <span style="width:60px"><label><input type="radio" name="gender" id="gender" value="1" style="border:0px"   /> 女性</label></span></td>
+           </tr>
+           <tr>
+              <td class="align_r">年 龄：</td>
+              <td><select name="age1" id="age1"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" >40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>-<select name="age2" id="age2"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" selected="selected">40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>岁</td>
+           </tr>
+           <tr>
+              <td class="align_r">婚 否：</td>
+              <td><select name="marry" id="marry"  size="1"  >
+
+      <option value="" >不限</option>
+
+<option value="1" >单身</option>
+
+<option value="2" >已婚</option>
+
+<option value="3" >离异</option>
+
+</select></td>
+           </tr>
+           <tr>
+              <td class="align_r">地 区：</td>
+              <td>{$f_area}</td>
+           </tr>
+           <tr>
+              <td class="align_r"></td>
+              <td><input type="submit" value="立即搜索" class="button_style" /></td>
+           </tr></form></table></td>
+        <td valign="top">
+           <table><form method="get" action="{$root}index.php">
+              <input type="hidden" name="s" value="/Search/base" />
+           <tr>
+              <td class="align_r">用户名：</td>
+              <td><input type="text" name="username" class="input_style_text" value=""  /> <input type="submit" name="submit" value="直接搜索" class="button_style" /></td>
+           </tr>
+           <tr>
+              <td class="align_r">邮箱：</td>
+              <td><input type="text" name="email" class="input_style_text" value=""  /> <input type="submit" name="submit" value="直接搜索" class="button_style" /></td>
+           </tr>
+           <tr>
+              <td class="align_r">QQ号：</td>
+              <td><input type="text" name="qq" class="input_style_text" value=""  /> <input type="submit" name="submit" value="直接搜索" class="button_style" /></td>
+           </tr>
+           <tr>
+              <td class="align_r">手机号：</td><input type="hidden" name="dire" value="1" />
+              <td><input type="text" name="mobile" class="input_style_text" value=""  /> <input type="submit" name="submit" value="直接搜索" class="button_style" /></td>
+           </tr></form>
+           </table>
+           </td>
+           </tr>
+        
+        </table>
+        <div class="search_split"></div>
+        <p class="search_h4">高级搜索—VIP会员搜索</p>
+        <table cellpadding="0" cellspacing="0" class="table_form">
+
+<FORM id=search_form method="GET" name="vip_search"  action="{$root}?s=/Search/advance">
+<input type="hidden" name="s" value="/Search/advance" />
+<tr>
+
+      <td width="100" class="align_r">我要寻找：</td>
+
+      <td><span style="width:80px"><label><input type="radio" name="gender" id="gender" value="0" style="border:0px"   checked/> 男性</label></span> <span style="width:80px"><label><input type="radio" name="gender" id="gender" value="1" style="border:0px"   /> 女性</label></span> </td>
+
+    </tr>
+
+<tr>
+
+      <td class="align_r">年　　龄：</td>
+
+      <td><select name="age1" id="age1"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" >40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>-<select name="age2" id="age2"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" selected="selected">40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>岁</td>
+
+    </tr>
+
+<tr>
+
+      <td class="align_r">职　　业：</td>
+
+
+
+      <td><select name="job" id="job"  size="1"  ><option value="" >不限</option>
+
+      <option value="1" >在校学生</option>
+
+<option value="2" >计算机/互联网/IT</option>
+
+<option value="3" >电子/半导体/仪表仪器</option>
+
+<option value="4" >通信技术</option>
+
+<option value="5" >销售</option>
+
+<option value="6" >市场拓展</option>
+
+<option value="7" >公关/商务</option>
+
+
+
+<option value="8" >采购/贸易</option>
+
+<option value="9" >客户服务/技术支持</option>
+
+<option value="10" >人力资源/行政/后勤</option>
+
+<option value="11" >高级管理</option>
+
+<option value="12" >生产/加工/制造</option>
+
+<option value="13" >质控/安检</option>
+
+<option value="14" >工程机械</option>
+
+<option value="15" >技工</option>
+
+<option value="16" >财会/审计/统计</option>
+
+
+
+<option value="17" >金融/证券/投资/保险</option>
+
+<option value="18" >房地产/装修/物业</option>
+
+<option value="19" >仓储/物流</option>
+
+<option value="20" >交通/运输</option>
+
+<option value="21" >普通劳动力/家政服务</option>
+
+<option value="22" >普通服务行业</option>
+
+<option value="23" >航空服务业</option>
+
+<option value="24" >教育/培训</option>
+
+<option value="25" >咨询/顾问</option>
+
+
+
+<option value="26" >学术/科研</option>
+
+<option value="27" >法律</option>
+
+<option value="28" >设计/创意</option>
+
+<option value="29" >文学/传媒/影视</option>
+
+<option value="30" >餐饮/旅游</option>
+
+<option value="31" >化工</option>
+
+<option value="32" >能源/地质勘查</option>
+
+<option value="33" >医疗/护理</option>
+
+<option value="34" >保健/美容</option>
+
+
+
+<option value="35" >生物/制药/医疗器械</option>
+
+<option value="36" >体育工作者</option>
+
+<option value="37" >翻译</option>
+
+<option value="38" >公务员/国家干部</option>
+
+<option value="39" >私营业主</option>
+
+<option value="40" >农/林/牧/渔业</option>
+
+<option value="41" >警察/其它</option>
+
+<option value="42" >自由职业者</option>
+
+<option value="43" >其它</option>
+
+
+
+</select></td>
+
+    </tr>
+
+
+
+<tr>
+
+      <td class="align_r">体　　形：</td>
+
+      <td><select name="figure" id="figure"  size="1"  ><option value="" >不限</option>
+
+      <option value="1" >清瘦</option>
+
+<option value="2" >苗条</option>
+
+
+
+<option value="3" >中等</option>
+
+<option value="4" >健壮</option>
+
+<option value="5" >略胖</option>
+
+<option value="6" >匀称</option>
+
+<option value="7" >瘦小</option>
+
+<option value="8" >矮胖</option>
+
+<option value="9" >大个</option>
+
+<option value="10" >肥胖</option>
+
+<option value="11" >性感</option>
+
+
+
+</select></td>
+
+    </tr>
+
+
+
+
+
+<tr>
+
+      <td class="align_r">身　　高：</td>
+
+      <td><select name="height" id="height"  size="1"  >
+
+    <option value="" >不限</option>
+
+    <option value="1" >155厘米以下</option>
+
+    <option value="2" >155-160厘米</option>
+
+    <option value="3" >160-165厘米</option>
+
+    <option value="4" >165-170厘米</option>
+
+    <option value="5" >170-175厘米</option>
+
+    <option value="6" >175-180厘米</option>
+
+    <option value="7" >180-185厘米</option>
+
+    <option value="8" >185厘米以上</option>
+
+  </select></td>
+
+</tr>
+
+<tr>
+
+      <td  class="align_r">学　　历：</td>
+
+      <td><select name="edu" id="edu"  size="1"  ><option value="" >不限</option>
+
+      <option value="1" >初中</option>
+
+<option value="2" >高中</option>
+
+<option value="3" >专科</option>
+
+<option value="4" >学士</option>
+
+<option value="5" >硕士</option>
+
+<option value="6" >博士</option>
+
+</select></td>
+
+    </tr>
+
+    <tr>
+
+      <td  class="align_r">收　　入：</td>
+
+      <td><select name="income" id="income"  size="1"  ><option value="" >不限</option>
+
+      <option value="1" >1000元以下</option>
+
+<option value="2" >1000-2000元</option>
+
+
+
+<option value="3" >2001-4000元</option>
+
+<option value="4" >4001-8000元</option>
+
+<option value="5" >8001-20000元</option>
+
+<option value="6" >20000元以上</option>
+
+</select></td>
+
+    </tr>
+
+<tr>
+
+      <td  class="align_r">交友意向：</td>
+
+      <td><select name="datingfor" id="purpose"  size="1"  >
+
+      <option value="" >不限</option>
+
+<option value="1" >异性伴侣</option>
+
+<option value="3" >E夜情</option>
+
+<option value="2" >纯友谊</option>
+
+<option value="5" >同性交友</option>
+
+<option value="4" >婚 姻</option>
+
+</select></td>
+
+    </tr>
+
+<tr>
+
+      <td  class="align_r">所在地区：</td>
+
+      <td>{$s_area}</td>
+
+    </tr>
+
+<tr>
+
+      <td></td>
+
+      <td><input type="submit" value="立即搜索" class="button_style" /></td>
+
+    </tr>
+
+</form>
+
+  </table>
+        </div>
+    </div>
+    <div id="main_r">
+        <div class="head mrt10">
+            <div class="rbg">
+            <h3>热门城市交友</h3>
+            </div>
+        </div>
+        <div class="cont">
+        <ul class="citylist">
+           <li><a href="__URL__/base/city/3/" >北京交友</a></li><li><a href="__URL__/base/city/4" >上海交友</a></li><li><a href="__URL__/base/city/38" >广州交友</a></li><li><a href="__URL__/base/city/39" >深圳交友</a></li><li><a href="__URL__/base/city/36" >天津交友</a></li><li><a href="__URL__/base/city/37" >重庆交友</a></li><li><a href="__URL__/base/city/322" >武汉交友</a></li><li><a href="__URL__/base/city/143" >南京交友</a></li><li><a href="__URL__/base/city/156" >杭州交友</a></li><li><a href="__URL__/base/city/308" >长沙交友</a></li><li><a href="__URL__/base/city/108" >大连交友</a></li><li><a href="__URL__/base/city/168" >厦门交友</a></li><li><a href="__URL__/base/city/157" >宁波交友</a></li><li><a href="__URL__/base/city/79" >郑州交友</a></li><li><a href="__URL__/base/city/235" >西安交友</a></li><li><a href="__URL__/base/city/204" >济南交友</a></li><li><a href="__URL__/base/city/205" >青岛交友</a></li><li><a href="__URL__/base/city/270" >成都交友</a></li>
+           <div class="cl"></div>
+           </ul>
+           <div class="cl"></div>
+        </div>
+        <div class="cl"></div>
+        <div class="head mrt10">
+            <div class="rbg">
+            <h3>搜索提示</h3>
+            </div>
+        </div>
+        <div class="cont">
+        <p>1. 资料填写完整的用户会出现在比较靠前的位置，现在就去完善你的资料；</p>
+<p>2. 有照片的用户将优先显示出来，现在就去上传照片；</p>
+<p>3. 另外，诚信会员被特别标注出来，现在就去通过诚信认证；</p>
+<p>4. 最后，记得经常来逛逛，比较高的活跃度能让更多人看到你，说不定你的TA也在其中。</p>
+<p>5. 搜索排名想插队，<a href="Pay/upgrade">点这里>></a></p>
+        </div>
+    </div>
+</div>
+<include file="../Index/footer" />

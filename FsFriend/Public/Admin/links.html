@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <p class="position"><span>网站管理</span>友情链接</p>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <form name="myform" action="__URL__/addlinks" method="post">
+      <caption>添加友情链接</caption>
+      <tr>
+        <td class="align_r">链接名称</td>
+        <td class="align_l"><input type="text" name="name" value="" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">链接地址</td>
+        <td class="align_l"><input type="text" name="url" value="" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">网站logo</td>
+        <td class="align_l"><input type="text" name="logo" value="" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">排序</td>
+        <td class="align_l"><input type="text" name="rank" value="10" /></td>
+      </tr>
+      <tr>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_l"><input type="submit" name="submit" value="提交" /></td>
+      </tr>
+      </form>
+      </table>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_list">
+      <caption>友情链接列表</caption>
+      <tr>
+        <th>排序</th>
+        <th>名称</th>
+        <th>URL</th>
+        <th>LOGO</th>
+        <th>操作</th>
+      </tr>
+      <volist name="list" id="qy">
+      <tr>
+        <td width="50">{$qy.rank}</td>
+        <td class="">{$qy.name}</td>
+        <td class="align_l"><a href="{$qy.url}" target="_blank" >{$qy.url}</a></td>
+        <td class="align_l">{$qy.logo}</td>
+        <td class="align_l"><a href="__URL__/dellinks/id/{$qy.id}"><font color="#FF0000">删除</font></a></td>
+      </tr>
+      </volist>
+      <tr>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_l"> </td>
+        <td class="align_r">&nbsp;</td>
+        <td class="align_l"> </td>
+      </tr>
+          </table>
+      
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

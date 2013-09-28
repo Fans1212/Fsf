@@ -1,0 +1,119 @@
+<include file="../Index/header" />
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" />
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" /> 
+        <div class="pro_details">
+        <div class="pro_nav cl">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html" class="on">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}">TA的日记</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>       
+        <h2 class="profile"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">{$nickname}的交友资料</h2>
+        <table class="higher" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<th>性　　别：</th>
+							<td>&nbsp;<eq name="gender" value="0">男<else/>女</eq></td>
+							<th>居住城市：</th>
+							<td>&nbsp;{$city}</td>
+						</tr>
+						<tr>
+							<th>年　　龄：</th>
+							<td>&nbsp;{$age}</td>
+							<th>婚　　否：</th>
+							<td>&nbsp;{$marry}</td>
+						</tr>
+						<tr>
+							<th>学　　历：</th>
+							<td>&nbsp;{$edu}</td>
+							<th>职　　业：</th>
+							<td>&nbsp;{$job}</td>
+						</tr>
+						<tr>
+							<th>收　　入：</th>
+							<td>&nbsp;{$income}</td>
+                            <th>身　　高：</th>
+							<td>&nbsp;{$height}</td>
+							
+						</tr>
+						<tr>
+							<th>体　　型：</th>
+							<td>&nbsp;{$figure}</td>						
+                            <th>是否喝酒：</th>
+							<td>&nbsp;{$drinking}</td>
+						</tr>
+						<tr>
+							<th>交友意向：</th>
+							<td>&nbsp;{$datingfor}</td>
+							<th>是否吸烟：</th>
+							<td>&nbsp;{$smoke}</td>
+						</tr>
+						<tr>
+							<th>喜欢地点：</th>
+							<td>&nbsp;{$favplace}</td>
+							<th>情性观念：</th>
+							<td>&nbsp;{$concept}</td>
+						</tr>
+						<tr>
+						  <th>个人优势：</th>
+						  <td colspan="3" class="long">&nbsp;{$superiority}</td>
+						  </tr>
+						<tr>
+						  <th>性格特征：</th>
+						  <td colspan="3" class="long">&nbsp;{$character}</td>
+						  </tr>
+						<tr>
+						  <th>兴趣爱好：</th>
+						  <td colspan="3" class="long">&nbsp;{$interest}</td>
+						  </tr>
+						<tr>
+						  <th>自我介绍：</th>
+						  <td colspan="3" class="long">&nbsp;{$aboutme}</td>
+						  </tr>
+				    </tbody>
+        </table>
+         <h2 class="require"><img src="{$tpl}/Skins/images/icon_015.gif" alt="">{$nickname}的择友要求</h2>
+         <table class="higher" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr>
+							<th>年　　龄：</th>
+							<td>&nbsp;{$rq_age|default='不限'}</td>
+							<th>婚　　否：</th>
+							<td>&nbsp;{$rq_marry|default='不限'}</td>
+						</tr>
+						<tr>
+							<th>学　　历：</th>
+							<td>&nbsp;{$rq_edu|default='高中以上'}</td>
+							<th>地　　区：</th>
+							<td>&nbsp;<neq name="rq_area" value="不限">{:areaid($rq_area)}<else/>{$rq_area}</neq></td>
+						</tr>
+						<tr>
+							<th>收　　入：</th>
+							<td>&nbsp;{$rq_income|default='1000元以上'}</td>
+                            <th>身　　高：</th>
+							<td>&nbsp;{$rq_height|default='不限'}</td>
+							
+						</tr>
+						<tr>
+						  <th>其他要求：</th>
+						  <td colspan="3" class="long">&nbsp;{$rq_other|default='无'}</td>
+						  </tr>
+				    </tbody>
+        </table> 
+         </div>
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<include file="../Index/footer" />

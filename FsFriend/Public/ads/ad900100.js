@@ -1,0 +1,1 @@
+document.write("ad900x100");

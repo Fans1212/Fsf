@@ -1,0 +1,42 @@
+        <div class="member_head">
+           <div class="avatar">
+           <img src="{:avatar($avatar,$gender)}" alt="{$nickname}" />
+           </div>
+           <div class="contact">
+              <p class="name">{$nickname} （UID:{$uid}）<if condition="$isadmin eq 1"><a href="index.php/AdminMem/delmember/uid/{$uid}"><font color="red">删除</font></a></if></p>
+              <p class="pro">{$city}，<eq name="gender" value="0">男<else/>女</eq>，{$age}岁，{$marry} 正在寻找：{$datingfor}</p>
+              <p class="btn"><a class="smile" href="View/contact/uid/{$uid}.html" id="{$isacce}">联系方式</a><a class="send_msg" href="View/message/uid/{$uid}.html"></a><a class="collect" href="{$root}?s=Collect/add/uid/{$uid}" id="profileFocusListA1"></a></p>              
+           </div>           
+        </div>
+        
+<link href="{$tpl}/Skins/jqModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Js/jqModal.js"></script>
+<div id="noacce" class="jqmDialog">
+<div class="jqmdTL"><div class="jqmdTR"><div class="jqmdTC jqDrag">提示信息</div></div></div>
+<div class="jqmdBL"><div class="jqmdBR"><div class="jqmdBC">
+<div class="jqmdMSG">
+<img class="fb" src="{$tpl}Skins/images/forbidden.png" /><p>查看会员联系方式需要10E币，您的E币不足，请充值或者升级VIP。</p><a href="Pay/point" class="rech">充值E币</a><a href="Pay/upgrade" class="rech">升级VIP</a>
+</div>
+</div></div></div>
+<input type="image" src="{$tpl}Skins/images/close.gif" class="jqmdX jqmClose" />
+</div>
+<script type="text/javascript" >
+ $(document).ready(function() {
+  $('#noacce').jqm({
+    trigger: 'a#accno',
+    overlay: 30, /* 0-100 (int) : 0 is off/transparent, 100 is opaque */
+    overlayClass: 'whiteOverlay'})
+    .jqDrag('.jqDrag'); /* make dialog draggable, assign handle to title */
+  
+  // Close Button Highlighting. IE doesn't support :hover. Surprise?
+  $('input.jqmdX')
+  .hover(
+    function(){ $(this).addClass('jqmdXFocus'); }, 
+    function(){ $(this).removeClass('jqmdXFocus'); })
+  .focus( 
+    function(){ this.hideFocus=true; $(this).addClass('jqmdXFocus'); })
+  .blur( 
+    function(){ $(this).removeClass('jqmdXFocus'); });
+
+});
+</script> 

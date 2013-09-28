@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/js/common.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+     <td class="center">
+      <p class="position"><span>网站管理</span>会员信息</p>
+       <div class="sub_nav"><ul><li><a href="__URL__/audit/uid/{$uid}">审核</a></li><li><a href="__URL__/lock/uid/{$uid}">禁止</a></li><li><a href="__URL__/delmember/uid/{$uid}">删除</a></li><li><a href="__URL__/chgroup/uid/{$uid}">更改会员组</a></li><li><a href="__URL__/edit/uid/{$uid}">编辑资料</a></li><li><a href="__ROOT__/?s=AdminMod/paylist/field/uid/keyword/{$uid}">支付记录</a></li><li><a href="__ROOT__/?s=AdminMod/paycharge/uid/{$uid}">交易明细</a></li><li><a href="__ROOT__/index.php/AdminMod/album/uid/{$uid}">他的相册</a></li><li><a href="__ROOT__/index.php/AdminMod/diary/uid/{$uid}">他的日记</a></li></ul><div class="cl"></div></div>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <caption>UID:{$uid} 状态:<eq name="islock" value="1">已禁止<else/>正常</eq> {$isaudit}</caption>
+      <tr>
+        <td class="align_r">用户名：</td>
+        <td>{$username}</td>
+        <td class="align_r">Email：</td>
+        <td>{$email}</td>
+        <td rowspan="5"><img src="<eq name="avatar" value="0">__PUBLIC__/Uploads/avatar/nophoto{$gender}.gif<else/>{:avatar($avatar)}</eq>" width="100" height="105" /><br /><neq name="avatar" value="0"><a href="__ROOT__/index.php/AdminMod/delavatar/id/{$avatar}">删除头像</a></neq></td>
+      </tr>
+      <tr>
+        <td class="align_r">会员组：</td>
+        <td>{$group}</td>
+        <td class="align_r">注册IP：</td>
+        <td>{$reg_ip}</td>
+       </tr>
+      <tr>
+        <td class="align_r">注册时间：</td>
+        <td>{$reg_time|date='Y-m-d H:i:s',###}</td>
+        <td class="align_r">登录IP：</td>
+        <td>{$login_ip}</td>
+        </tr>
+      <tr>
+        <td class="align_r">最后登录：</td>
+        <td>{$login_time|date='Y-m-d H:i:s',###}</td>
+        <td class="align_r">登录次数：</td>
+        <td>{$login_count}</td>
+      </tr>
+      <tr>
+        <td class="align_r">积分：</td>
+        <td>{$credit}</td>
+        <td class="align_r">资金：</td>
+        <td>{$money}</td>
+      </tr>
+      <volist name="infos" id="qy">
+      <tr>
+        <td class="align_r">{$qy.name}：</td>
+        <td colspan="4" class="align_l">{$qy.v}</td>
+      </tr>
+      </volist>
+      </table>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+</table>
+</body>
+</html>

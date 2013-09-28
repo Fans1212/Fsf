@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/editor/kindeditor.js"></script>
+<script type="text/javascript">
+    KE.show({
+        id : 'description' //TEXTAREA输入框的ID
+   });
+</script>
+
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+     <td class="center">
+      <p class="position"><span>网站管理</span>会员组</p>
+      <div class="sub_nav"><ul><li><a href="__URL__/group">管理会员组</a></li><li><a href="__URL__/groupadd">添加会员组</a></li></ul><div class="cl"></div></div>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_form">
+      <if condition="strtolower(ACTION_NAME) eq groupadd ">
+      <form name="myform" action="__URL__/groupadd" method="post">
+      <else/>
+      <form name="myform" action="__URL__/groupsave" method="post">
+      </if>
+      <caption>添加会员组</caption>
+      <tr>
+      <th width="20%"><strong>名称：</strong></th>
+      <td><input type="text" name="name" id="groupname" value="{$name}" size="30" maxlength="20" require="true" datatype="limit|ajax" url="?mod=member&file=group&action=checkname" min="3" max="20" msg="用户组名不得少于3个字符超过20个字符|"></td>
+      </tr>
+    <tr>
+      <th><strong>服务介绍：</strong></th>
+      <td class="align_l"><textarea name="description" id="description" style="width:700px;height:300px;">{$description}</textarea></td>
+    </tr>
+    <tr>
+      <th><strong>允许访问：</strong></th>
+      <td><label>
+        <input type="radio" name="allowvisit" id="allowvisit" value="1" <eq name="allowvisit" value="1"> checked=""</eq>>
+        是</label>
+        
+        <label>
+          <input type="radio" name="allowvisit" id="allowvisit" <eq name="allowvisit" value="0"> checked=""</eq> value="0">
+          否</label></td>
+    </tr>
+    <tr>
+      <th><strong>允许搜索：</strong></th>
+      <td><label>
+        <input type="radio" name="allowsearch" id="allowsearch" value="1"<eq name="allowsearch" value="1"> checked=""</eq>>
+        是</label>
+        
+        <label>
+          <input type="radio" name="allowsearch" id="allowsearch"<eq name="allowsearch" value="0"> checked=""</eq> value="0">
+          否</label></td>
+    </tr>
+    <tr>
+      <th><strong>允许发布：</strong></th>
+      <td><label>
+        <input type="radio" name="allowpost" id="allowpost" value="1" <eq name="allowpost" value="1"> checked=""</eq>>
+        是</label>
+        
+        <label>
+          <input type="radio" name="allowpost" id="allowpost" value="0" <eq name="allowpost" value="0"> checked=""</eq>>
+          否</label></td>
+    </tr>
+    <tr>
+      <th><strong>允许会员自助升级：</strong></th>
+      <td><label>
+        <input type="radio" name="allowupgrade" id="allowupgrade" value="1" <eq name="allowupgrade" value="1"> checked=""</eq>>
+        是</label>
+        
+        <label>
+          <input type="radio" name="allowupgrade" id="allowupgrade" value="0" <eq name="allowupgrade" value="0"> checked=""</eq>>
+          否</label></td>
+    </tr>
+    <tr>
+      <th><strong>包年价格：</strong></th>
+      <td><input type="text" name="price_y" id="price_y" value="{$price_y}" size="8" manxlength="50"></td>
+    </tr>
+    <tr>
+      <th><strong>包月价格：</strong></th>
+      <td><input type="text" name="price_m" id="price_m" value="{$price_m}" size="8" manxlength="50"></td>
+    </tr>
+    <tr>
+      <th><strong>包日价格：</strong></th>
+      <td><input type="text" name="price_d" id="price_d" value="{$price_d}" size="8" manxlength="50"></td>
+    </tr>
+    <tr>
+      <th><strong>最大短消息数：</strong></th>
+      <td><input type="text" name="allowmessage" id="allowmessage" value="{$allowmessage}" size="6" manxlength="50">
+        条</td>
+    </tr>
+    <tr>
+      <th><strong>是否禁用：</strong></th>
+      <td><label>
+        <input type="radio" name="disabled" id="disabled" value="1">
+        是</label>
+        
+        <label>
+          <input type="radio" name="disabled" id="disabled" value="0" checked="">
+          否</label></td>
+    </tr>
+    <tr>
+      <th><strong>排序：</strong></th>
+      <td><input type="text" name="listorder" value="{$listorder}"  /></td>
+    </tr>
+    <tr>
+      <td></td><input type="hidden" name="groupid" value="{$groupid}" />
+      <td><input type="submit" name="submit" value=" 确定 ">
+        
+        <input type="reset" name="reset" value=" 清除 "></td>
+    </tr>
+    </form>
+      </table>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+</table>
+</body>
+</html>

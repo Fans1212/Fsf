@@ -1,0 +1,304 @@
+<include file="../Index/header" />
+<div id="main">
+   <div id="main_l" class="mrt10 border_1">
+       <div class="search_form">
+           <p class="search_h4">搜索结果</p>
+           <ul class="member_list">
+           <volist name="list" id="qy">
+           <li><img src="<neq name="qy.avatar" value="0">{:avatar("$qy[avatar]")}<else/>{$root}Public/Uploads/avatar/nophoto{$qy.gender}.gif</neq>" alt="{$qy.nickname}" width="120" height="150" />
+           <p><a href="{$qy.url_pro}" class="name" target="_blank">{$qy.nickname|default='未知用户'}</a><span class="dtf">寻找:{$qy.datingfor},状态:等待中</span></p>
+           <p class="info"><eq name="qy.gender" value="0">男<else/>女</eq>，{$qy.age}岁，{$qy.marry},{$qy.city}</p>
+           <p class="aboutme">{$qy.aboutme|msubstr=0,80}</p>
+           <p class="nav"><a href="View/message/uid/{$qy.uid}.html" class="nav" target="_blank">发送短信</a><a href="{$qy.url_pro}" class="nav" target="_blank">查看资料</a></p>
+           </li>
+           </volist>
+           </ul>
+           <div id="page">{$page}</div>
+       </div> 
+   </div>
+   <div id="main_r">
+       <div class="head mrt10">
+           <div class="rbg">
+           <h3>快速搜索</h3>
+           </div>
+      </div>
+      <div class="cont">
+   <table cellspacing="0" cellpadding="0" class="table_search"><form name="myform" method="get" action="index.php">
+      <input type="hidden" name="s" value="/Search/base" />
+           <tr>
+              <td class="align_r">性 别：</td>
+              <td><span style="width:60px"><label><input type="radio" name="gender" id="gender" value="0" style="border:0px"   checked/> 男性</label></span> <span style="width:60px"><label><input type="radio" name="gender" id="gender" value="1" style="border:0px"   /> 女性</label></span></td>
+           </tr>
+           <tr>
+              <td class="align_r">年 龄：</td>
+              <td><select name="age1" id="age1"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" >40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>-<select name="age2" id="age2"  size="1"  ><option value="18" >18</option>
+
+<option value="19" >19</option>
+
+<option value="20" >20</option>
+
+<option value="21" >21</option>
+
+<option value="22" >22</option>
+
+<option value="23" >23</option>
+
+<option value="24" >24</option>
+
+<option value="25" >25</option>
+
+<option value="26" >26</option>
+
+<option value="27" >27</option>
+
+<option value="28" >28</option>
+
+<option value="29" >29</option>
+
+<option value="30" >30</option>
+
+<option value="31" >31</option>
+
+<option value="32" >32</option>
+
+<option value="33" >33</option>
+
+<option value="34" >34</option>
+
+<option value="35" >35</option>
+
+<option value="36" >36</option>
+
+<option value="37" >37</option>
+
+<option value="38" >38</option>
+
+<option value="39" >39</option>
+
+<option value="40" selected="selected">40</option>
+
+<option value="41" >41</option>
+
+<option value="42" >42</option>
+
+<option value="43" >43</option>
+
+<option value="44" >44</option>
+
+<option value="45" >45</option>
+
+<option value="46" >46</option>
+
+<option value="47" >47</option>
+
+<option value="48" >48</option>
+
+<option value="49" >49</option>
+
+<option value="50" >50</option>
+
+<option value="51" >51</option>
+
+<option value="52" >52</option>
+
+<option value="53" >53</option>
+
+<option value="54" >54</option>
+
+<option value="55" >55</option>
+
+<option value="56" >56</option>
+
+<option value="57" >57</option>
+
+<option value="58" >58</option>
+
+<option value="59" >59</option>
+
+<option value="60" >60</option>
+
+<option value="61" >61</option>
+
+<option value="62" >62</option>
+
+<option value="63" >63</option>
+
+<option value="64" >64</option>
+
+<option value="65" >65</option>
+
+<option value="66" >66</option>
+
+<option value="67" >67</option>
+
+<option value="68" >68</option>
+
+<option value="69" >69</option>
+
+<option value="70" >70</option>
+
+</select>岁</td>
+           </tr>
+           <tr>
+              <td class="align_r">婚 否：</td>
+              <td><select name="marry" id="marry"  size="1"  >
+
+      <option value="" >不限</option>
+
+<option value="1" >单身</option>
+
+<option value="2" >已婚</option>
+
+<option value="3" >离异</option>
+
+</select></td>
+           </tr>
+           <tr>
+              <td class="align_r">地 区：</td>
+              <td>{$area}</td>
+           </tr>
+           <tr>
+              <td class="align_r"></td>
+              <td><input type="submit" value="立即搜索" class="button_style" /></td>
+           </tr></form></table>
+      
+       </div>
+       <div class="head mrt10">
+           <div class="rbg">
+           <h3>重点会员推荐</h3>
+           </div>
+      </div>
+      <div class="cont"><php>$member_recom=$qylist->qyuser('gender:1;num:10;avatar:true;order:hits desc;');</php>
+         <ul class="member_recom">
+            <volist name="member_recom" id="qy">
+            <li>
+            <img src="<neq name="qy.avatar" value="0">{:avatar("$qy[avatar]")}<else/>{$root}Public/Uploads/avatar/nophoto{$qy.gender}.gif</neq>" alt="{$qy.nickname}" width="100" height="110" />
+            <p><a href="{$qy.url_pro}" class="name" target="_blank">{$qy.nickname}</a></p>
+            <p>{$qy.age}岁,<eq name="qy.gender" value="0">男<else/>女</eq></p>
+            <p style="height:40px;">{$qy.city}</p>
+            <p style="text-align:right;"><a href="{$qy.url_pro}" target="_blank">详细资料>></a></p>
+            </li>      
+            </volist>   
+         </ul>
+      </div>
+      <div class="head mrt10">
+           <div class="rbg">
+           <h3>网友日记</h3>
+           </div>
+      </div>
+      <div class="cont"><php>$diary_new=$qylist->qydiary('num:16;order:thedate desc;');</php>
+           <ul class="article_list">
+           <volist name="diary_new" id="qy">
+           <li><a href="{$qy.url_article}" target="_blank">{$qy.diarytitle|msubstr=0,15}</a></li>
+           </volist>
+           </ul>      
+      </div>
+   </div>
+</div>
+<include file="../Index/footer" />

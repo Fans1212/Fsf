@@ -1,0 +1,16 @@
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+DirectoryIndex index.html index.php
+# 修改以下语句中的 /xgcms 为你的网站目录地址，如果程序放在根目录中，请将 /xgcms 修改为 /
+RewriteBase /friend/
+# Rewrite 系统规则请勿修改
+RewriteRule ^View/(.*)$ index.php\?s=/View/$1 [NC]
+RewriteRule ^Search/(.*)$ index.php\?s=/Search/$1 [NC]
+RewriteRule ^Diary/(.*)$ index.php\?s=/Diary/$1 [NC]
+RewriteRule ^Member/(.*)$ index.php\?s=/Member/$1 [NC]
+RewriteRule ^Pay/(.*)$ index.php\?s=/Pay/$1 [NC]
+RewriteRule ^Help/(.*)$ index.php\?s=/Help/$1 [NC]
+RewriteRule ^Album/(.*)$ index.php\?s=/Album/$1 [NC]
+RewriteRule ^Collect/(.*)$ index.php\?s=/Collect/$1 [NC]
+RewriteRule ^Message/(.*)$ index.php\?s=/Message/$1 [NC]
+RewriteRule ^Register/(.*)$ index.php\?s=/Register/$1 [NC]

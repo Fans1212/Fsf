@@ -1,0 +1,60 @@
+<include file="../Index/header" />
+<link rel="stylesheet" type="text/css" href="/thinkphp/./Tpl/default/Skins/Member.css" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/css.js"></script>
+<div id="main">
+   <include file="../Member/left" />
+   <div id="m_right" class="mrt10">
+   <p id="position"><strong>当前位置：</strong><a href="?s=Member/">个人中心</a>阅读短信</p>
+   <ul id="m_subnav">
+       <li><a href="__URL__/">收件箱</a></li><li><a href="__URL__/outbox">发件箱</a></li>
+       <div class="cl"></div>
+  </ul>
+<form method="post" name="myform" action="__URL__/del">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<caption>阅读短信</caption>
+   <tr>
+     <th width="150">收件人：</th>
+     <td>{:nickname($to)}</td>
+   </tr>
+   <tr>
+     <th>发件人：</th>
+     <td>{:nickname($from)}</td>
+   </tr>
+   <tr>
+     <th>标题：</th>
+     <td>{$m_title}</td>
+   </tr>
+   <tr>
+     <th height="100">内容：</th>
+     <td>{$m_content}</td>
+   </tr>
+   <tr>
+     <th>时间：</th>
+     <td>{$time|date='Y-m-d H:i:s',###}</td>
+   </tr>
+</table>
+</form>
+<form method="post" name="myform" action="__URL__/send">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<caption>回复短信</caption>
+   <tr>
+     <th width="150">收件人：</th>
+     <td><input name="to" type="text" value="{:nickname($from)}"  /></td>
+   </tr>
+   <tr>
+     <th>标题：</th>
+     <td><input name="m_title" type="text" value="回复：{$m_title}" /></td>
+   </tr>
+   <tr>
+     <th>内容：</th>
+     <td><textarea name="m_content" cols="40" rows="8"></textarea></td>
+   </tr>
+   <tr>
+     <th> </th>
+     <td><input type="submit" name="submit" class="input_style" value="提交" /></td>
+   </tr>
+</table>
+</form>
+   </div>
+</div>
+<include file="../Index/footer" />

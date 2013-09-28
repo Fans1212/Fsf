@@ -1,0 +1,49 @@
+<include file="../Index/header" />
+<link href="{$tpl}/Skins/search.css" rel="stylesheet" type="text/css" />
+<div id="main">
+    <div id="main_l" class="mrt10">
+        <div class="ctitle">
+           <div class="rcor">
+           <h3>查看会员资料</h3>
+           </div> 
+        </div>
+        <div class="cl"></div>
+        <include file="view_head" />  
+        <div class="pro_details">
+        <div class="pro_nav cl">
+          <ul>
+           <li><a href="View/user/uid/{$uid}.html">交友资料</a></li>
+           <li><a href="View/photo/uid/{$uid}">TA的相册</a></li>
+           <li><a href="View/diary/uid/{$uid}">TA的日记</a></li>
+           <li><a href="View/message/uid/{$uid}.html" class="on">站内消息</a></li>
+          </ul>
+          <div class="cl"></div>
+        </div>
+       
+        <h2 class="require"><img src="{$tpl}/Skins/images/icon_016.gif" alt="">给{$nickname}发送消息</h2>
+         <table class="higher" width="100%" border="0" cellspacing="0" cellpadding="0">
+         <form name="message" action="{$root}?s=Message/send" method="post">
+						<tbody>
+						<tr>
+							<th>标题：</th>
+							<td class="long"><input type="text" name="m_title" maxlength="60" value="" class="inputtitle" /></td>
+						</tr>
+						<tr>
+							<th>内容：</th>
+							<td><textarea style="width:500px;height:100px;" name="m_content"></textarea></td>
+						</tr>
+						<tr>
+							<th></th><input name="to" value="{$uid}" type="hidden" />
+							<td class="long"><input type="submit" name="submit" value="发送" class="button_style" /> *普通会员最多免费发送10条短信，VIP会员不限制，<a href="{$root}?s=Pay/upgrade" target="_blank">升级VIP>></a></td>
+						</tr>
+			        </tbody>
+         </form>
+        </table>
+      </div>
+         
+   </div>
+   <div id="main_r">
+   <include file="view_right" />
+   </div>
+</div>
+<include file="../Index/footer" />

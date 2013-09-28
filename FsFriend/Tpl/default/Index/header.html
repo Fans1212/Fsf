@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$title}</title>
+<base href="{$root}" />
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/ChangeCity.js"></script> 
+<script language="JavaScript" src="__PUBLIC__/Js/common.js"></script>
+{$css}
+</head>
+<body>
+<div id="head" class="cl">
+    <div id="logo"></div>
+    <div id="banner">
+        <div id="div_login" style="display:none">
+		欢迎您访问<strong>{$site_name}</strong>,最好的<strong>同城交友网站</strong>! <a href="Register/">注册</a> | <a href="{$root}">登录</a> |
+	    </div>
+        <div id="div_logined" style="display:none">
+		<strong id="logined_username" ></strong>，<a href="Member/">会员中心</a> | 
+        <a href="Member/logout">退出登录</a>
+	</div>
+    </div>
+</div>
+<div id="nav" class="cl">
+    <ul>
+       <li class="first"><a href="" class="on">首 页</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Search/local">同城异性</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Search/">搜索会员</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Diary/index/">会员日记</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Member/">个人中心</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Pay/Upgrade">升级VIP</a></li>
+       <LI class=menu_line></LI>
+       <li><a href="Help/">帮助中心</a></li>
+       <LI class=menu_line></LI>
+    </ul>
+</div>

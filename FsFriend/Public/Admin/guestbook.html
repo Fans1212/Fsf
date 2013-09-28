@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="__PUBLIC__/js/common.js"></script>
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="myform" action="__URL__/delgb" method="post">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <p class="position"><span>网站管理</span>网友留言</p>
+      <table border="0" cellpadding="0" cellspacing="1" class="table_list">
+      <caption>网友留言</caption>
+      <neq name="list" value="">
+      <volist name="list" id="qy">
+      <tr>
+        <td width="50"><input type="checkbox" name="gid[]" value="{$qy.gid}" checked /></td>
+        <td class="align_l" width="200"><strong>用户名：</strong>{$qy.username}<br />
+        <strong>邮　箱：</strong>{$qy.email}<br />
+        <strong>QQ：</strong>{$qy.qq}<br />
+        <strong>IP：</strong>{$qy.ip}
+        </td>
+        <td class="align_l" valign="top"><strong>内容：</strong></td>
+        
+      </tr>
+      </volist><else/>
+      <tr>
+        <td class="align_r"></td>
+        <td class="align_l">暂无留言</td>
+      </tr>
+      </neq>
+      <if condition="$page!==''" >
+      <tr>
+        <td class="align_r"></td>
+        <td class="align_l"  colspan="2">{$page}</td>
+      </tr>
+      </if>
+      <tr>
+      <td width="50"><input name="chkall" type="checkbox" id="chkall" onClick="checkall(this.form)" style="border:0;" value="check" checked>删除</td>
+      <td colspan="2" class="align_l"><input type="submit" name="submit" value="提交" /></td>
+      </tr>
+      </table>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+   </form>
+</table>
+</body>
+</html>

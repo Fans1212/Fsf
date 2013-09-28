@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javaScript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/Js/css.js"></script>
+<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function tab(no,n){
+	for(var i=1;i<=n;i++){
+		$('#tool'+i).hide();
+	}
+	$('#tool'+no).show();
+}
+function showfields(){
+	var exptable = $('#exptable').val();
+	$.ajax({
+		url: 'ajaxfields/id/'+exptable+'',
+		success: function(res){
+			$('#fields').html(res);
+		}
+	});
+} 
+function rpfield(v){
+	$('#rpfield').val(v); 
+}
+function checkall(form) {
+	for(var i = 0;i < form.elements.length; i++) {
+		var e = form.elements[i];
+		if (e.name != 'chkall' && e.disabled != true) {
+			e.checked = form.chkall.checked;
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<table class="tab" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+      <td class="left"><img src="__PUBLIC__/Admin/images/tab_03.gif" width="15" height="30" /></td>
+      <td class="center">
+      <div class="position"><span>网站管理</span>数据库管理</div>
+      <div class="sub_nav"><ul><li><a href="__URL__/bakupdb">备份数据库</a></li><li><a href="__URL__/restore">恢复数据库</a></li><li><a href="__URL__/runsql">执行SQL语句</a></li><li><a href="__URL__/replacefield">批量替换字符</a></li></ul><div class="cl"></div></div>
+      <if condition="strtolower(ACTION_NAME) eq restore ">
+    <table border="0" cellpadding="0" cellspacing="1" class="table_list" id="tool1">
+      <form action="__URL__/delbakall" method="post">
+      <caption>还原数据库</caption>
+        <tr>
+        <th width="5%">选中</th>
+        <th width="5%">ID</th>
+        <th width="40%">文件名</th>
+        <th width="5%">文件大小</th>
+        <th width="20%">备份时间</th>
+        <th width="5%">卷号</th>
+        <th width="25%">操作</th>
+        </tr><volist name="sql_list" id="qy">        
+        <tr>
+          <td ><input type="checkbox" name="filename[]" value="{$qy.filename}" style='border:none'></td>
+          <td >{$i}</td>
+          <td style="text-align:left"><a href="{$qy.path}{$qy.filename}" target="_blank">{$qy.filename}</a></td>
+          <td >{$qy.filesize} M</td>
+          <td >{$qy.maketime}</td>
+          <td >{$qy.number}</td>
+          <td ><a href="__URL__/resdb/id/{$qy.pre}" onClick="return confirm('导入数据会删除现在数据库的所有信息,是否断续?')">导入</a> | <a href="__URL__/Delbak/id/{$qy.filename}" onClick="return confirm('确定删除?')">删除</a> | <a href="__URL__/Downbak/id/{$qy.filename}">下载</a></td>
+        </tr></volist>
+        <tr>
+        <td colspan="7">说明:导入时只需要点导入任意一个文件,程序会自动导入剩余文件,<font color="red">请确保分卷编号完整以及当前数据表前缀信息与备份的前缀一致</font>!</td>
+        </tr>
+        <tr class="firstalt">
+        <td colspan="7"><input name="chkall" type="checkbox" onClick="checkall(this.form)" style='border:none'>全选/反选 <input type="submit" class="mininput" value=" 批量删除数据 " onClick="return confirm('确定删除?')"/></td>
+        </tr>
+      </form>
+    </table>
+<elseif condition="strtolower(ACTION_NAME) eq bakupdb " />    
+      <table border="0" cellpadding="0" cellspacing="1" class="table_list">
+      <form name="myform" action="__URL__/bakup" method="post">
+      <caption>备份数据库</caption>
+      <tr>
+        <td class="" width="100"><input name="chkall" type="checkbox" id="chkall" onClick="checkall(this.form)" style="border:0;" value="check" checked>全选/反选</td>
+        <td class="align_l">数据库表</td>
+      </tr>
+      <volist name="table" id="qy">
+      <tr>
+        <td class=""><input type="checkbox" name="tables[]" value="{$qy}" style='border:none' checked></td>
+        <td class="align_l">{$qy}</td>
+      </tr>
+      </volist>
+      <tr>
+        <td class="align_r"></td>
+        <td class="align_l">每个分卷大小<input type="text" value="2048" name="filesize" size="5" />K <input type="submit" name="submit" value="提交" /></td>
+      </tr>   </form>
+      </table>  
+      <elseif condition="strtolower(ACTION_NAME) eq runsql " /> 
+          <table class="table_form" border="0" cellpadding="4" cellspacing="1" id="tool2">
+      <form action="__URL__/Runsql" method="post">
+        <caption>SQL运行器</caption>  
+        <tr class=firstalt>
+          <td width="15%">执行SQL语句：<br><span style="color:#999999">除非确定您的SQL语句安全 <br>否则不要轻易在此处运行!</span></td>
+          <td width="85%"><textarea name="sql" id="textarea"  type="text" style="height:150px;width:500px;"></textarea></td>
+        </tr>
+        <tr class="firstalt">
+          <td colspan="2" align="center"><input name="runsql_sub" type="hidden" id="runsql_sub" value="true"><input class="bginput" type="submit" name="submit" value=" 提交 " > <input class="bginput" type="reset" name="Input" value=" 重置 " >
+          </td>
+        </tr>
+        <tr class="firstalt">
+          <td colspan="2">
+          </td>
+        </tr>
+        </form>
+      </table>
+      <else/> 
+      <table border="0" cellpadding="4" cellspacing="1" class="table_form">
+      <form action="__URL__/Replacefield" method="post">
+        <caption>批量替换字符</caption>
+        <tr class="firstalt">
+          <td width="15%">选择数据表与字段：</td>
+          <td width="85%"><select name="exptable" id="exptable" size="10" style="height:150px; width:500px" onChange="showfields()">
+          <volist name="table" id="qy"><option value="{$qy}">{$qy}</option></volist></select>
+          <div id="fields"></div></td>
+        </tr>
+         <tr class="firstalt">
+          <td width="15%">要替换的字段：</td>
+          <td width="85%"><input name="rpfield" type="text" id="rpfield" style="width:500px;"/></td>
+        </tr>       
+        <tr class="firstalt">
+          <td width="15%">被替换的内容：</td>
+          <td width="85%"><textarea name="rpstring" id="rpstring" style="width:500px;height:50px"></textarea></td>
+        </tr>
+        <tr class="firstalt">
+           <td>替换为的内容：</td>
+           <td><textarea name="tostring" id="tostring" class="alltxt" style="width:500px;height:50px"></textarea></td>
+        </tr>
+         <tr class="firstalt">
+           <td>选择替换条件：</td>
+           <td><input name="condition" type="text" id="condition" style="width:500px;"/>(为空全部替换 请遵循SQL的条件语句 如uid=3271 uid>3271)</td>
+        </tr>               
+        <tr class="firstalt">
+          <td colspan="2" align="center"><input class="bginput" type="submit" name="submit" value=" 提交 " onClick="return confirm('一旦执行后将无法恢复，请确定条件语句正确无误，或者备份好数据库以防万一!')"> <input class="bginput" type="reset" name="Input" value=" 重置 " >
+          </td>
+        </tr>
+        </form>
+      </table></if>
+      </td>
+      <td class="right"><img src="__PUBLIC__/Admin/images/tab_07.gif" width="14" height="30" /></td>
+   </tr>
+   <tr>
+      <td height="29"><img src="__PUBLIC__/Admin/images/tab_20.gif" width="14" height="29" /></td>
+      <td  background="__PUBLIC__/Admin/images/tab_21.gif"></td>
+      <td><img src="__PUBLIC__/Admin/images/tab_22.gif" width="14" height="29" /></td>
+   </tr>
+</table>
+</body>
+</html>
+
